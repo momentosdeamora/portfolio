@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- SEO & AI Bot Structured Data -->
+  <meta name="description" content="Alanis U. D. Moreira — AI Architect, especialista em LLMs, RAG e agentes inteligentes. Backend Python, GCP, FastAPI. Professora de IA Aplicada. Disponível para projetos e consultoria.">
+  <meta name="keywords" content="AI Architect, LLM, RAG, Retrieval-Augmented Generation, LangChain, LangGraph, Python, FastAPI, GCP, Agentes Inteligentes, Machine Learning, Data Engineer, NLP, Backend Developer, Professora IA, Consultoria IA, Inteligência Artificial, Vector Store, FAISS, ChromaDB, OpenAI, Anthropic">
+  <meta name="author" content="Alanis U. D. Moreira">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Alanis U. D. Moreira — AI Architect &amp; LLM Specialist">
+  <meta property="og:description" content="AI Architect especializada em LLMs, RAG e agentes. Python, GCP, FastAPI. Professora de IA Aplicada.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Alanis U. D. Moreira — AI Architect">
+  <link rel="canonical" href="https://seudominio.com.br/">
+  <!-- JSON-LD: Person schema for AI recruiter bots -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alanis U. D. Moreira",
+    "jobTitle": "Arquiteta de IA",
+    "description": "Arquiteta de IA especializada em sistemas LLM, RAG (Retrieval-Augmented Generation), agentes inteligentes e backend Python para ambientes corporativos. Professora de IA Aplicada.",
+    "url": "https://seudominio.com.br",
+    "sameAs": [
+      "https://github.com/seuusuario",
+      "https://linkedin.com/in/seuperfil"
+    ],
+    "knowsAbout": [
+      "Large Language Models (LLMs)",
+      "Retrieval-Augmented Generation (RAG)",
+      "LangChain", "LangGraph",
+      "AI Agents", "Intelligent Agents",
+      "Python", "FastAPI",
+      "Google Cloud Platform (GCP)",
+      "Vector Databases", "FAISS", "ChromaDB",
+      "NLP", "Machine Learning",
+      "Docker", "Kubernetes",
+      "Data Engineering", "ETL Pipelines",
+      "AI Governance", "LGPD",
+      "MLOps", "AI Education"
+    ],
+    "hasOccupation": [
+      {
+        "@type": "Occupation",
+        "name": "Arquiteta de IA",
+        "occupationLocation": { "@type": "Country", "name": "Brazil" },
+        "skills": "LLMs, RAG, Agents, Python, GCP, LangChain"
+      },
+      {
+        "@type": "Occupation",
+        "name": "AI Professor",
+        "occupationLocation": { "@type": "Country", "name": "Brazil" },
+        "skills": "IA Aplicada, LLMs, RAG, GCP, Python"
+      }
+    ],
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Arquitetura de Sistemas IA com LLMs",
+        "description": "Desenho e implementação de sistemas baseados em Large Language Models, RAG e agentes para empresas."
+      },
+      {
+        "@type": "Offer",
+        "name": "Consultoria e Implementação RAG",
+        "description": "Pipelines de ingestão, vetorização e retrieval semântico para bases de conhecimento corporativas."
+      },
+      {
+        "@type": "Offer",
+        "name": "Treinamentos e Workshops de IA Aplicada",
+        "description": "Formações práticas em LLMs, RAG, GCP e Python para times técnicos."
+      }
+    ]
+  }
+  </script>
+
+  <title>⚔ DADOSDEAMORA.exe — Dark Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stars-bg" id="stars"></div>
+<canvas id="daySkyCanvas"></canvas>
+
+<div class="levelup-toast" id="levelupToast">
+  <div class="levelup-toast-title">✦ LEVEL UP! ✦</div>
+  <div class="levelup-toast-msg">Você desbloqueou uma nova seção!</div>
+</div>
+
+<!-- ============================
+     HUD / NAVBAR
+     ============================ -->
+<nav class="hud">
+  <div class="hud-left">
+    <div class="hud-avatar">
+      <svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated">
+        <polygon points="13,2 22,8 22,18 13,24 4,18 4,8" fill="#9b6dff" opacity="0.9"/>
+        <polygon points="13,2 22,8 13,12" fill="#c4a0ff"/>
+        <polygon points="13,2 4,8 13,12" fill="#7a4edb"/>
+        <polygon points="4,8 13,12 4,18" fill="#5a2db0"/>
+        <polygon points="22,8 13,12 22,18" fill="#b07fff"/>
+        <polygon points="4,18 13,12 13,24" fill="#6b3ec4"/>
+        <polygon points="22,18 13,24 13,12" fill="#9b6dff"/>
+        <polygon points="13,5 20,9 13,10" fill="rgba(255,255,255,0.35)"/>
+      </svg>
+    </div>
+    <div class="hud-player">
+      <span class="hud-name">DADOSDEAMORA.EXE</span>
+      <span class="hud-class">Arquiteta de IA &amp; Conjuradora de Códigos</span>
+    </div>
+  </div>
+
+  <div class="xp-container">
+    <div class="xp-label"><span>⚡ XP</span><span id="xpVal">7430 / 10000</span></div>
+    <div class="xp-track" id="xpTrack" title="Clique para ganhar XP!">
+      <div class="xp-fill" id="xpBar"></div>
+    </div>
+  </div>
+
+  <div class="hp-container">
+    <div class="hp-label"><span>❤ HP</span><span id="hpVal">870 / 1000</span></div>
+    <div class="hp-track" id="hpTrack" title="Clique para recuperar HP!">
+      <div class="hp-fill" id="hpBar"></div>
+    </div>
+  </div>
+
+  <button class="theme-toggle-btn" id="themeToggle">☀️ DIA</button>
+
+  <ul class="hud-nav" id="hudNav">
+    <li><a href="#sobre">personagem</a></li>
+    <li><a href="#skills">arsenal</a></li>
+    <li><a href="#projetos">missões</a></li>
+    <li><a href="#servicos">contratos</a></li>
+    <li><a href="#contato">taverna</a></li>
+    <li><a href="#conteudo">grimório</a></li>
+    <li><a href="#status">status</a></li>
+    <li><a href="#experiencia">campanhas</a></li>
+    <li><a href="#formacao">academia</a></li>
+  </ul>
+
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ============================
+     HERO
+     ============================ -->
+
+<section class="hero" id="home">
+  <p class="hero-subtitle">— Conheça o meu Portfólio —</p>
+
+  <span class="hero-gem gem-icon">
+    <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated">
+      <polygon points="40,4 68,20 68,60 40,76 12,60 12,20" fill="#9b6dff" opacity="0.85"/>
+      <polygon points="40,4 68,20 40,32" fill="#c4a0ff"/>
+      <polygon points="40,4 12,20 40,32" fill="#7a4edb"/>
+      <polygon points="12,20 40,32 12,60" fill="#5a2db0"/>
+      <polygon points="68,20 40,32 68,60" fill="#b07fff"/>
+      <polygon points="12,60 40,32 40,76" fill="#6b3ec4"/>
+      <polygon points="68,60 40,76 40,32" fill="#9b6dff"/>
+      <polygon points="40,22 58,30 40,38 22,30" fill="rgba(155,109,255,0.4)"/>
+      <polygon points="40,8 62,22 40,26" fill="rgba(255,255,255,0.3)"/>
+      <polygon points="40,8 28,16 36,22" fill="rgba(255,255,255,0.15)"/>
+      <polygon points="40,32 52,46 40,52 28,46" fill="rgba(192,57,110,0.25)"/>
+    </svg>
+  </span>
+
+  <h1 class="hero-title">Alanis U. D. Moreira<span class="blink-cursor">_</span></h1>
+  <p class="hero-class-line">💎 Arquiteta de IA &amp; Professora de IA Aplicada 💎</p>
+  <p class="hero-lore">
+    Arquiteta de inteligências que habitam domínios corporativos.
+    Invoco agentes autônomos, orquestro LLMs e entrelaço sistemas em teias conversacionais
+    que ampliam a consciência e o poder de decisão das organizações.
+  </p>
+  <a href="#sobre" class="press-start">▶ REVELAR PERSONAGEM ◀</a>
+  <p class="hero-scroll-hint">▼ ROLE PARA BAIXO ▼</p>
+
+  <!-- Day mode elements -->
+  <div class="bat-sleep" title="🦇 Zzz...">🦇</div>
+  <div class="day-sun">
+    <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+      <circle cx="30" cy="30" r="12" fill="#FFD700"/>
+      <g stroke="#FFD700" stroke-width="3" stroke-linecap="round">
+        <line x1="30" y1="4" x2="30" y2="12"/>
+        <line x1="30" y1="48" x2="30" y2="56"/>
+        <line x1="4" y1="30" x2="12" y2="30"/>
+        <line x1="48" y1="30" x2="56" y2="30"/>
+        <line x1="10" y1="10" x2="16" y2="16"/>
+        <line x1="44" y1="44" x2="50" y2="50"/>
+        <line x1="50" y1="10" x2="44" y2="16"/>
+        <line x1="16" y1="44" x2="10" y2="50"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="castle-wrap">
+    <canvas id="castleCanvas"></canvas>
+  </div>
+</section>
+
+<section class="section section-dark" id="sobre" 
+  itemscope itemtype="https://schema.org/Person"
+  aria-label="Sobre Alanis Moreira — Arquiteta de IA especialista em LLMs e RAG">
+  <span class="seo-meta" itemprop="name">Alanis U. D. Moreira</span>
+  <span class="seo-meta" itemprop="jobTitle">Arquiteta de IA, Especialista LLM, Desenvolvedora Python Backend, Professora de IA Aplicada</span>
+  <span class="seo-meta" itemprop="knowsAbout">LLM, RAG, Agents, Python, FastAPI, GCP, NLP, MLOps, Docker, Data Engineering</span>
+
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">// FICHA 01</span>
+      <h2>PERSONAGEM</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="char-sheet">
+      <!-- Left: character sprite + stats -->
+      <div class="char-left-col">
+        <div class="char-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges" width="200" height="200">
+            <rect x="9" y="5" width="14" height="19" fill="#000000"/>
+            <rect x="8" y="8" width="16" height="13" fill="#000000"/>
+            <rect x="13" y="8" width="6" height="10" fill="#8D5524"/>
+            <rect x="12" y="9" width="1" height="8" fill="#8D5524"/>
+            <rect x="19" y="9" width="1" height="8" fill="#8D5524"/>
+            <rect x="14" y="8" width="4" height="1" fill="#9f6734"/>
+            <rect x="14" y="17" width="4" height="1" fill="#7a4a20"/>
+            <rect x="12" y="11" width="2" height="1" fill="#2b2b2b"/>
+            <rect x="19" y="11" width="2" height="1" fill="#2b2b2b"/>
+            <rect x="12" y="12" width="3" height="3" fill="#ffffff"/>
+            <rect x="13" y="12" width="1" height="3" fill="#6b3e1f"/>
+            <rect x="13" y="13" width="1" height="1" fill="#2b1a10"/>
+            <rect x="17" y="12" width="3" height="3" fill="#ffffff"/>
+            <rect x="18" y="12" width="1" height="3" fill="#6b3e1f"/>
+            <rect x="18" y="13" width="1" height="1" fill="#2b1a10"/>
+            <rect x="11" y="14" width="1" height="1" fill="#c06a7a" opacity="0.4"/>
+            <rect x="20" y="14" width="1" height="1" fill="#c06a7a" opacity="0.4"/>
+            <rect x="14" y="16" width="1" height="1" fill="#5c381a"/>
+            <rect x="15" y="17" width="2" height="1" fill="#5c381a"/>
+            <rect x="17" y="16" width="1" height="1" fill="#5c381a"/>
+            <rect x="10" y="18" width="12" height="6" fill="#4a0066"/>
+            <rect x="9" y="18" width="14" height="3" fill="#2e003d"/>
+            <rect x="9" y="24" width="14" height="5" fill="#1a0024"/>
+            <rect x="8" y="28" width="16" height="1" fill="#120018"/>
+            <rect x="10" y="18" width="1" height="11" fill="#2e003d"/>
+            <rect x="21" y="18" width="1" height="11" fill="#2e003d"/>
+            <rect x="14" y="19" width="4" height="1" fill="#2e003d"/>
+            <rect x="15" y="20" width="2" height="1" fill="#2e003d"/>
+            <rect x="9" y="21" width="2" height="4" fill="#8D5524"/>
+            <rect x="21" y="21" width="2" height="4" fill="#8D5524"/>
+            <rect x="11" y="29" width="3" height="2" fill="#8D5524"/>
+            <rect x="18" y="29" width="3" height="2" fill="#8D5524"/>
+            <rect x="10" y="31" width="4" height="1" fill="#1a1a1a"/>
+            <rect x="18" y="31" width="4" height="1" fill="#1a1a1a"/>
+          </svg>
+          <div class="char-name-display">ALANIS U. D. MOREIRA</div>
+          <div class="char-level">LVL 3 — AI ARCHITECT</div>
+          <div class="char-subclass">LLMs · RAG · Agents</div>
+          <div class="char-stats">
+            <div class="stat-row">
+              <span class="stat-name">ARQUITETURA LLM</span>
+              <div class="stat-val">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <span class="stat-name">RAG &amp; AGENTS</span>
+              <div class="stat-val">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <span class="stat-name">PYTHON / BACKEND</span>
+              <div class="stat-val">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+                <div class="stat-pip gold"></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <span class="stat-name">DATA PIPELINES</span>
+              <div class="stat-val">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+                <div class="stat-pip"></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <span class="stat-name">CLOUD &amp; MLOPS</span>
+              <div class="stat-val">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip"></div>
+                <div class="stat-pip"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: 3 stacked info blocks — visible all at once, no tabs -->
+      <div class="char-info-panel">
+
+        <!-- BLOCO 1: QUEM SOU -->
+        <div class="profile-block">
+          <div class="profile-block-header">
+            <span class="profile-block-icon">👤</span>
+            <span class="profile-block-title">QUEM SOU</span>
+          </div>
+          <p class="profile-block-text">
+            <strong>Alanis U. D. Moreira</strong>. Arquiteta de AI especializada em construir sistemas corporativos baseados em <span style="color:var(--rune)">LLMs, RAG e agentes autônomos</span>. Background em backend Python e engenharia de dados. Professora de IA Aplicada.
+          </p>
+          <div class="profile-stats-row">
+            <div class="profile-stat-pill">⚡ 3+ anos</div>
+            <div class="profile-stat-pill">☁️ Certificação Azure</div>
+            <div class="profile-stat-pill">🎓 Professora IA</div>
+            <div class="profile-stat-pill">🔬 Pesquisadora</div>
+          </div>
+        </div>
+
+        <!-- BLOCO 2: O QUE FAÇO -->
+        <div class="profile-block">
+          <div class="profile-block-header">
+            <span class="profile-block-icon">⚔️</span>
+            <span class="profile-block-title">O QUE FAÇO</span>
+          </div>
+          <div class="profile-do-grid">
+            <div class="profile-do-item">
+              <span class="profile-do-icon">🤖</span>
+              <span class="profile-do-label">Arquitetura LLM</span>
+            </div>
+            <div class="profile-do-item">
+              <span class="profile-do-icon">🔮</span>
+              <span class="profile-do-label">RAG Pipelines</span>
+            </div>
+            <div class="profile-do-item">
+              <span class="profile-do-icon">⚙️</span>
+              <span class="profile-do-label">Backend Python</span>
+            </div>
+            <div class="profile-do-item">
+              <span class="profile-do-icon">☁️</span>
+              <span class="profile-do-label">GCP &amp; Azure &amp; Cloud AI</span>
+            </div>
+            <div class="profile-do-item">
+              <span class="profile-do-icon">🎓</span>
+              <span class="profile-do-label">Workshops IA</span>
+            </div>
+            <div class="profile-do-item">
+              <span class="profile-do-icon">⚖️</span>
+              <span class="profile-do-label">Governança IA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO 3: O QUE JÁ FIZ -->
+        <div class="profile-block">
+          <div class="profile-block-header">
+            <span class="profile-block-icon">🏆</span>
+            <span class="profile-block-title">O QUE JÁ FIZ</span>
+          </div>
+          <div class="profile-done-list">
+            <div class="profile-done-item">
+              <span class="profile-done-badge legendary">★★★</span>
+              <div class="profile-done-info">
+                <span class="profile-done-title">AI Architect Senior @ OF HUNTER <span class="profile-done-now">● atual</span></span>
+                <span class="profile-done-tags">LLM · AZURE OPENAI · AZURE AI TRANSLATOR · PYTHON </span>
+              </div>
+            </div>
+            <div class="profile-done-item">
+              <span class="profile-done-badge legendary">★★★</span>
+              <div class="profile-done-info">
+                <span class="profile-done-title">Professora IA Aplicada @ SoulCode Academy <span class="profile-done-now">● atual</span></span>
+                <span class="profile-done-tags">LLMs · RAG · GCP · PYTHON</span>
+              </div>
+            </div>
+            <div class="profile-done-item">
+              <span class="profile-done-badge epic">★★</span>
+              <div class="profile-done-info">
+                <span class="profile-done-title">VIVI — IA para Comunidade Trans (Pesquisa)</span>
+                <span class="profile-done-tags">PYTHON · LLMs · RAG</span>
+              </div>
+            </div>
+            <div class="profile-done-item">
+              <span class="profile-done-badge rare">★</span>
+              <div class="profile-done-info">
+                <span class="profile-done-title">Dev Python @ REVIO Tecnologia (3a 5m)</span>
+                <span class="profile-done-tags">FASTAPI · NLP · DOCKER · MLOps · LGPD</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:0.8rem">
+            <a href="#projetos" style="font-family:'Press Start 2P',monospace;font-size:0.38rem;color:var(--gold);border:1px solid var(--gold);padding:0.4rem 0.9rem;display:inline-block">⚔ VER TODAS AS MISSÕES ▼</a>
+            <a href="#servicos" style="font-family:'Press Start 2P',monospace;font-size:0.38rem;color:var(--rune);border:1px solid var(--rune);padding:0.4rem 0.9rem;display:inline-block;margin-left:0.5rem">💎 CONTRATAR ▼</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills" aria-label="Stack técnica e habilidades: LLMs, RAG, Python, GCP, FastAPI">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">// GRIMÓRIO 02</span>
+      <h2>DIFERENCIAIS &amp; STACK TÉCNICA</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="mastery-title" style="margin-bottom:1.5rem">✨ O que me diferencia</div>
+    <div class="blessings-grid" style="margin-bottom:3rem">
+      <div class="blessing-card">
+        <span class="blessing-icon">🧠</span>
+        <div class="blessing-text">
+          <span class="blessing-name">RAG ARCHITECT</span>
+          <span class="blessing-desc">Projeto e implemento sistemas que transformam bases de conhecimento corporativas dispersas em IA conversacional escalável — da ingestão ao retrieval semântico em produção.</span>
+        </div>
+      </div>
+      <div class="blessing-card">
+        <span class="blessing-icon">⚖️</span>
+        <div class="blessing-text">
+          <span class="blessing-name">AI GOVERNANCE</span>
+          <span class="blessing-desc">Construo sistemas multi-agente com LangGraph e LangChain que operam de forma autônoma, tomam decisões encadeadas e se integram a sistemas legados corporativos.
+          </span>
+        </div>
+      </div>
+      <div class="blessing-card">
+        <span class="blessing-icon">🎓</span>
+        <div class="blessing-text">
+          <span class="blessing-name">IA COM GOVERNANÇA</span>
+          <span class="blessing-desc">Não só faço funcionar — faço funcionar com segurança. Implemento RBAC, criptografia, conformidade LGPD e auditabilidade desde a arquitetura, não como camada adicional.</span>
+        </div>
+      </div>
+      <div class="blessing-card">
+        <span class="blessing-icon">🔬</span>
+        <div class="blessing-text">
+          <span class="blessing-name">TRADUTORA TÉCNICA</span>
+          <span class="blessing-desc">Sou professora de IA Aplicada — o que significa que consigo comunicar arquiteturas complexas para times técnicos e não-técnicos, documentar decisões e formar pessoas.</span>
+        </div>
+      </div>
+      <div class="blessing-card">
+        <span class="blessing-icon">🔐</span>
+        <div class="blessing-text">
+          <span class="blessing-name">PESQUISADORA ATIVA</span>
+          <span class="blessing-desc">Iniciação científica em andamento com publicações — IA para impacto social. Combino rigor acadêmico com aplicação prática, o que diferencia decisões técnicas com embasamento teórico sólido.</span>
+        </div>
+      </div>
+      <div class="blessing-card">
+        <span class="blessing-icon">♀️</span>
+        <div class="blessing-text">
+          <span class="blessing-name">BACKGROUND MULTIDISCIPLINAR</span>
+          <span class="blessing-desc">Antes de IA: programação de sistemas, automação, ETL, NLP aplicado e engenharia de dados. Essa base evita os erros clássicos de quem vai direto para LLMs sem entender infraestrutura.</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mastery-title" style="margin-bottom:1.5rem">🌳 Árvore de Talentos</div>
+    <div class="skill-tree" style="margin-bottom:3rem">
+      <div class="skill-branch">
+        <div class="skill-branch-title"><span class="icon">🔮</span> LLMs &amp; AGENTES</div>
+        <div class="skill-item"><div class="skill-gem gold"></div><span class="skill-name">RAG Pipelines</span><span class="skill-lvl">MAX</span></div>
+        <div class="skill-item"><div class="skill-gem gold"></div><span class="skill-name">OpenAI </span><span class="skill-lvl">LV9</span></div>
+        <div class="skill-item"><div class="skill-gem"></div><span class="skill-name">Hugging Face</span><span class="skill-lvl">LV8</span></div>
+        <div class="skill-item"><div class="skill-gem"></div><span class="skill-name">Vector Stores (FAISS)</span><span class="skill-lvl">LV9</span></div>
+        <div class="skill-item"><div class="skill-gem ash"></div><span class="skill-name">Embeddings &amp; Vetorização</span><span class="skill-lvl">LV9</span></div>
+      </div>
+      <div class="skill-branch">
+        <div class="skill-branch-title"><span class="icon">⚔</span> PYTHON &amp; BACKEND</div>
+        <div class="skill-item"><div class="skill-gem gold"></div><span class="skill-name">Python</span><span class="skill-lvl">MAX</span></div>
+        <div class="skill-item"><div class="skill-gem blood"></div><span class="skill-name">FastAPI</span><span class="skill-lvl">LV9</span></div>
+        <div class="skill-item"><div class="skill-gem ash"></div><span class="skill-name">APIs RESTful / Microsserviços</span><span class="skill-lvl">LV9</span></div>
+        <div class="skill-item"><div class="skill-gem ash"></div><span class="skill-name">PostgreSQL / MongoDB</span><span class="skill-lvl">LV7</span></div>
+        <div class="skill-item"><div class="skill-gem ash"></div><span class="skill-name">NLP </span><span class="skill-lvl">LV8</span></div>
+        <div class="skill-item"><div class="skill-gem ash"></div><span class="skill-name">Multiprocessing / Async</span><span class="skill-lvl">LV7</span></div>
+      </div>
+      <div class="skill-branch">
+        <div class="skill-branch-title"><span class="icon">⚗</span> DATA ENGINEERING</div>
+        <div class="skill-item"><div class="skill-gem gold"></div><span class="skill-name">SQL</span><span class="skill-lvl">MAX</span></div>
+        <div class="skill-item"><div class="skill-gem"></div><span class="skill-name">ETL / ELT Pipelines</span><span class="skill-lvl">LV8</span></div>
+        <div class="skill-item"><div class="skill-gem ash"></div><span class="skill-name">Pandas / NumPy</span><span class="skill-lvl">LV8</span></div>
+        <div class="skill-item"><div class="skill-gem ash"></div><span class="skill-name">Web Scraping</span><span class="skill-lvl">LV8</span></div>
+        <div class="skill-item"><div class="skill-gem ash"></div><span class="skill-name">SMB / Automação de Arquivos</span><span class="skill-lvl">LV7</span></div>
+      </div>
+      <div class="skill-branch">
+        <div class="skill-branch-title"><span class="icon">🌑</span> CLOUD &amp; DEVOPS</div>
+        <div class="skill-item"><div class="skill-gem blood"></div><span class="skill-name">GCP (IA Services)</span><span class="skill-lvl">LV8</span></div>
+        <div class="skill-item"><div class="skill-gem ash"></div><span class="skill-name">Azure (IA Services)</span><span class="skill-lvl">LV6</span></div>
+        <div class="skill-item"><div class="skill-gem blood"></div><span class="skill-name">Docker</span><span class="skill-lvl">LV8</span></div>
+        <div class="skill-item"><div class="skill-gem ash"></div><span class="skill-name">GitHub / Versionamento</span><span class="skill-lvl">LV8</span></div>
+        <div class="skill-item"><div class="skill-gem ash"></div><span class="skill-name">Linux / Windows</span><span class="skill-lvl">LV8</span></div>
+      </div>
+    </div>
+
+</section>
+
+<section class="section section-dark" id="projetos" aria-label="Projetos: sistemas RAG, agentes LLM, pipelines ETL, IA com impacto social">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">// MISSÕES 03</span>
+      <h2>MISSÕES CONCLUÍDAS</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="quest-log">
+      <div class="quest-card legendary">
+        <div class="quest-banner">
+          <span class="quest-rarity rarity-legendary">★★★ LENDÁRIO</span>
+          <span class="quest-status status-complete">✓ COMPLETO</span>
+        </div>
+        <div class="quest-body">
+          <span class="quest-icon">🤝</span>
+          <h3 class="quest-title">VIVI — A GUARDIÃ TRANS<br>(IA para Vulnerabilidade Social)</h3>
+          <p class="quest-desc">Assistente virtual baseada em LLMs para auxiliar a comunidade trans em situação de vulnerabilidade — fornecendo informações sobre direitos, saúde e recursos de apoio via RAG.</p>
+          <div class="quest-tags">
+            <span class="quest-tag">Python</span><span class="quest-tag">LLMs</span>
+            <span class="quest-tag">RAG</span><span class="quest-tag">Pesquisa Científica</span>
+          </div>
+        </div>
+        <div class="quest-footer">
+          <span class="quest-reward">⚡ +3000 XP  🏆 Social Impact</span>
+          <div class="quest-links">
+            <a href="#" class="quest-link">⚔ GitHub</a>
+            <button class="quest-link" data-blog="vivi-trans">🔬 Pesquisa</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="quest-card">
+        <div class="quest-banner">
+          <span class="quest-rarity rarity-rare">★★ RARO</span>
+          <span class="quest-status status-complete">✓ COMPLETO</span>
+        </div>
+        <div class="quest-body">
+          <span class="quest-icon">🤖</span>
+          <h3 class="quest-title">GOLEM DE RESPOSTAS<br>(Chatbot RAG + LLM)</h3>
+          <p class="quest-desc">Golem capaz de responder perguntas sobre documentos corporativos usando Retrieval-Augmented Generation, LangChain e FAISS. Pipeline completo de ingestão e vetorização.</p>
+          <div class="quest-tags">
+            <span class="quest-tag">Python</span><span class="quest-tag">LangChain</span>
+            <span class="quest-tag">FastAPI</span><span class="quest-tag">FAISS</span>
+          </div>
+        </div>
+        <div class="quest-footer">
+          <span class="quest-reward">⚡ +2500 XP  💎 Epic Drop</span>
+          <div class="quest-links">
+            <a href="#" class="quest-link">⚔ GitHub</a>
+            <a href="#" class="quest-link">💎 Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="quest-card">
+        <div class="quest-banner">
+          <span class="quest-rarity rarity-rare">★★ RARO</span>
+          <span class="quest-status status-complete">✓ COMPLETO</span>
+        </div>
+        <div class="quest-body">
+          <span class="quest-icon">🔄</span>
+          <h3 class="quest-title">O RITUAL DO ETL<br>(Pipelines com NLP + Automação)</h3>
+          <p class="quest-desc">Pipelines robustos de dados com NLP para extração contextual, automação de scraping e movimentação via SMB. Otimizados para desempenho e baixo consumo de memória.</p>
+          <div class="quest-tags">
+            <span class="quest-tag">Python</span><span class="quest-tag">NLP</span>
+            <span class="quest-tag">ETL</span><span class="quest-tag">SMB</span><span class="quest-tag">Docker</span>
+          </div>
+        </div>
+        <div class="quest-footer">
+          <span class="quest-reward">⚡ +1800 XP  🗝 Key Item</span>
+          <div class="quest-links">
+            <a href="#" class="quest-link">⚔ GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="servicos" 
+  aria-label="Serviços contratáveis: Arquitetura IA, RAG, LLMs, Workshops, Consultoria">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">// CONTRATOS 04 — HIRE ME</span>
+      <h2>SERVIÇOS DISPONÍVEIS</h2>
+      <div class="divider"></div>
+    </div>
+    <span class="seo-meta">Disponível para contratação: consultoria IA, arquitetura LLM, RAG, workshops, treinamentos, backend Python, GCP. Open to work. Hire me.</span>
+    <div class="dialog-box" style="margin-bottom:2rem">
+      <p class="dialog-text">
+        Conjuros disponíveis para contratação — missões remotas ou híbridas.<br>
+        Cada contrato é uma aventura personalizada. <strong>Entre em contato</strong> para discutir o escopo.
+      </p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🤖</span>
+        <div class="service-title">ARQUITETURA DE<br>SISTEMAS IA / LLM</div>
+        <p class="service-desc">Desenho a implementação de sistemas baseados em LLM (Large Language Models) e SLM (Small Language Models) para ambientes corporativos: agentes autônomos, chatbots RAG, pipelines de vetorização e integração com sistemas legados.</p>
+        <div class="service-tags"><span class="service-tag">GCP</span><span class="service-tag">Azure</span><span class="service-tag">OpenAI</span><span class="service-tag">Vector DBs</span><span class="service-tag">Python</span></div>
+        <div class="service-price">⚡ Projeto sob medida · Remoto</div>
+      </div>
+      <div class="service-card blood-card">
+        <span class="service-icon">🔮</span>
+        <div class="service-title">CONSULTORIA &amp;<br>IMPLEMENTAÇÃO RAG</div>
+        <p class="service-desc">Construção de pipelines RAG do zero: ingestão de documentos, chunking, embedding, indexação vetorial e API de inferência. Da prova de conceito ao deploy em produção.</p>
+        <div class="service-tags"><span class="service-tag">RAG</span><span class="service-tag">FAISS</span><span class="service-tag">FastAPI</span><span class="service-tag">GCP</span><span class="service-tag">Docker</span></div>
+        <div class="service-price">⚡ Resultados mensuráveis</div>
+      </div>
+      <div class="service-card gold-card">
+        <span class="service-icon">🎓</span>
+        <div class="service-title">WORKSHOPS &amp;<br>TREINAMENTOS DE IA</div>
+        <p class="service-desc">Formações práticas hands-on para times técnicos: fundamentos de LLMs, RAG, GCP para IA, governança e segurança. Do básico ao avançado com laboratórios reais.</p>
+        <div class="service-tags"><span class="service-tag">LLMs / RAG</span><span class="service-tag">GCP AI</span><span class="service-tag">Python</span><span class="service-tag">Hands-on Labs</span></div>
+        <div class="service-price">⚡ Turmas in-company ou abertas</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">⚙️</span>
+        <div class="service-title">BACKEND PYTHON &amp;<br>APIS DE INFERÊNCIA</div>
+        <p class="service-desc">APIs RESTful com FastAPI para servir modelos de ML e LLMs: autenticação, observabilidade, versionamento e integração com microsserviços. Deploy containerizado com Docker.</p>
+        <div class="service-tags"><span class="service-tag">FastAPI</span><span class="service-tag">Python</span><span class="service-tag">Docker</span><span class="service-tag"></span><span class="service-tag">MLOps</span></div>
+        <div class="service-price">⚡ Escopo definido por Sprint</div>
+      </div>
+      <div class="service-card blood-card">
+        <span class="service-icon">🔬</span>
+        <div class="service-title">PESQUISA &amp; PROVA<br>DE CONCEITO EM IA</div>
+        <p class="service-desc">Avaliação de viabilidade, benchmark de modelos e PoC para novas iniciativas de IA. Análise de trade-offs (RAG vs fine-tuning, cloud vs on-premise) com relatório técnico executivo.</p>
+        <div class="service-tags"><span class="service-tag">PoC</span><span class="service-tag">Benchmarking</span><span class="service-tag">Relatório Técnico</span><span class="service-tag">AI Strategy</span></div>
+        <div class="service-price">⚡ Entrega em 2–4 semanas</div>
+      </div>
+      <div class="service-card gold-card">
+        <span class="service-icon">⚖️</span>
+        <div class="service-title">GOVERNANÇA &amp;<br>SEGURANÇA EM IA</div>
+        <p class="service-desc">Frameworks de governança para IA corporativa: Conformidade com LGPD, auditabilidade de modelos e políticas de uso responsável.</p>
+        <div class="service-tags"><span class="service-tag">LGPD</span><span class="service-tag">AI Governance</span><span class="service-tag">LGPD</span><span class="service-tag">Security</span><span class="service-tag">Compliance</span></div>
+        <div class="service-price">⚡ Consultoria estratégica + técnica</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem">
+      <a href="#contato" class="press-start" style="display:inline-block;font-size:0.55rem;padding:0.9rem 2rem">⚔ INICIAR NEGOCIAÇÃO ◀</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contato">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">// TAVERNA 05</span>
+      <h2>ENTRA EM CONTATO</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="tavern">
+      <div class="tavern-notice">
+        <p class="tavern-text">
+          Tens uma <strong>missão digna</strong>? Procuras uma
+          <strong>arquiteta de agentes</strong> para o teu projeto?
+          <br><br>
+          Deixa um pergaminho no Linkedin.
+          Responderei antes do próximo solstício...
+          ou em até <strong>2 dias úteis</strong>.
+        </p>
+        <a href="https://www.linkedin.com/in/alanis-urquisa/" class="contact-btn">📜 ENVIAR PERGAMINHO</a>
+      </div>
+
+      <div class="scroll-cards">
+        <a href="https://github.com/momentosdeamora" class="scroll-card" target="_blank">
+          <span class="scroll-card-icon">⚔</span>
+          <div class="scroll-card-info">
+            <span class="scroll-card-title">GITHUB</span>
+            <span class="scroll-card-sub">https://github.com/momentosdeamora</span>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/alanis-urquisa/" class="scroll-card" target="_blank">
+          <span class="scroll-card-icon">🛡</span>
+          <div class="scroll-card-info">
+            <span class="scroll-card-title">LINKEDIN</span>
+            <span class="scroll-card-sub">https://www.linkedin.com/in/alanis-urquisa/</span>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/momentosdeamora/" class="scroll-card" target="_blank">
+          <span class="scroll-card-icon">🛡</span>
+          <div class="scroll-card-info">
+            <span class="scroll-card-title">INSTAGRAM</span>
+            <span class="scroll-card-sub">https://www.instagram.com/momentosdeamora/</span>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/@DadosdeAmora" class="scroll-card" target="_blank">
+          <span class="scroll-card-icon">🛡</span>
+          <div class="scroll-card-info">
+            <span class="scroll-card-title">YOUTUBE</span>
+            <span class="scroll-card-sub">https://www.youtube.com/@DadosdeAmora</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     MAIS SOBRE A JORNADA
+     ============================ -->
+<section class="section" id="conteudo">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">// GRIMÓRIO 06</span>
+      <h2>CONTEÚDO TÉCNICO &amp; PESQUISA</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="manuscripts-grid">
+
+      <div class="manuscript-card research">
+        <div class="manuscript-header">
+          <span class="manuscript-type research">🔬 PESQUISA</span>
+        </div>
+        <div class="manuscript-body">
+          <span class="manuscript-icon">🤝</span>
+          <div class="manuscript-title">Vivi: IA para Comunidade Trans em Situação de Vulnerabilidade</div>
+          <div class="manuscript-desc">Assistente virtual baseada em LLMs para fornecer informações sobre direitos, saúde e recursos de apoio. Apresentada na ISLA 2025 e na Jornada de Iniciação Científica.</div>
+          <div class="manuscript-meta">
+            <span class="manuscript-meta-item">📅 2025</span>
+            <span class="manuscript-meta-item">🏛️ STREAMLIT · PYTHON · XVII WTT</span>
+          </div>
+          <a href="https://aisel.aisnet.org/isla2025/29/" class="manuscript-link">🔬 LER PESQUISA</a>
+        </div>
+      </div>
+
+      <div class="manuscript-card talk">
+        <div class="manuscript-header">
+          <span class="manuscript-type talk">🎤 OFICINA</span>
+        </div>
+        <div class="manuscript-body">
+          <span class="manuscript-icon">🔐</span>
+          <div class="manuscript-title">Segredos que elas guardam: Criptografia, Segurança Digital e Protagonismo Feminino</div>
+          <div class="manuscript-desc">Oficina sobre criptografia e segurança digital com foco em protagonismo feminino. Realizada na Fábrica de Cultura São Bernardo e Vila Curuçá, 2025.</div>
+          <div class="manuscript-meta">
+            <span class="manuscript-meta-item">📅 2025</span>
+            <span class="manuscript-meta-item">🏟️ Fábrica de Cultura SP</span>
+          </div>
+          <a href="https://www.linkedin.com/posts/alanis-urquisa_criptografia-ciberseguranaexa-seguranaexadigital-activity-7340068569918988290-3TH9?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUk3FwBHjBsb3MOHxjIDmTX1r5G8GHyxQs" class="manuscript-link">🎤 VER PROCLAMAÇÃO</a>
+        </div>
+      </div>
+
+      <div class="manuscript-card">
+        <div class="manuscript-header">
+          <span class="manuscript-type article">📜 MANUSCRITO</span>
+        </div>
+        <div class="manuscript-body">
+          <span class="manuscript-icon">🔮</span>
+          <div class="manuscript-title">Você Está Aprendendo IA Errado</div>
+          <div class="manuscript-desc">Guia prático de como aprender IA.</div>
+          <div class="manuscript-meta">
+            <span class="manuscript-meta-item">📅 2024</span>
+            <span class="manuscript-meta-item">⚡ 2.4k leituras</span>
+          </div>
+          <a href="https://www.linkedin.com/pulse/voc%C3%AA-est%C3%A1-aprendendo-ia-errado-e-seus-concorrentes-alanis-sr81f/?trackingId=8S478JTqQXahywmopLqwag%3D%3D" class="manuscript-link">📖 LER TOMO</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="status">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">// STATUS 07</span>
+      <h2>O QUE ESTOU FAZENDO AGORA</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="status-panel">
+
+      <div class="status-card active-quest">
+        <span class="status-icon">⚔️</span>
+        <div class="status-label">Missão Principal (Main Quest)</div>
+        <div class="status-title">AI ARCHITECT + PROFESSORA IA</div>
+        <div class="status-desc">Liderando arquitetura de agentes e soluções RAG enterprise enquanto formo a próxima geração de profissionais de IA Aplicada com foco em LLMs e GCP.</div>
+        <div class="status-progress">
+          <div class="status-progress-label"><span>Progresso da Campanha</span><span>72%</span></div>
+          <div class="status-progress-bar"><div class="status-progress-fill" data-width="72" style="width:0%"></div></div>
+        </div>
+      </div>
+
+      <!--<div class="status-card">
+        <span class="status-icon">🧪</span>
+        <div class="status-label">Estado de Transmutação</div>
+        <div class="status-title">CURSANDO: MESTRADO (2026–2027)</div>
+        <div class="status-desc">Expandindo o arsenal teórico com pesquisa avançada. A próxima forma do personagem está em evolução — prepara-se para desbloquear o título de Mestre.</div>
+        <div class="status-progress">
+          <div class="status-progress-label"><span>Progresso do Artefato</span><span>10%</span></div>
+          <div class="status-progress-bar"><div class="status-progress-fill" data-width="10" style="width:0%"></div></div>
+        </div>
+      </div> -->
+
+      <div class="status-card">
+        <span class="status-icon">🔬</span>
+        <div class="status-label">Expedição Científica</div>
+        <div class="status-title">PESQUISA: IA PARA COMUNIDADE TRANS</div>
+        <div class="status-desc">Investigação e construção de solução tecnológica para auxílio à comunidade trans vítima de violência, usando IA. Iniciação científica ativa com publicações em andamento.</div>
+        <div class="status-progress">
+          <div class="status-progress-label"><span>Publicações</span><span>3/5</span></div>
+          <div class="status-progress-bar"><div class="status-progress-fill" data-width="60" style="width:0%"></div></div>
+        </div>
+      </div>
+
+      <div class="status-card">
+        <span class="status-icon">✨</span>
+        <div class="status-label">Status do Herói: Ativo</div>
+        <div class="status-title">OPEN TO: PROJETOS E COLABORAÇÕES</div>
+        <div class="status-desc">Disponível para missões envolvendo arquitetura de sistemas IA, consultoria em LLMs, implementação de pipelines RAG e colaborações em pesquisa com impacto social.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="experiencia" aria-label="Experiência profissional: AI Architect, Professora IA, Backend Developer">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">// CRÔNICAS 08 — TRABALHOS</span>
+      <h2>EXPERIÊNCIA PROFISSIONAL</h2>
+      <div class="divider"></div>
+    </div>
+
+    <!-- Timeline visual -->
+    <div class="exp-timeline">
+
+      <!-- Entry 1: AI Architect -->
+      <div class="exp-entry">
+        <div class="exp-timeline-dot active"></div>
+        <div class="exp-timeline-line"></div>
+        <div class="exp-card exp-card-expanded">
+          <div class="exp-card-top">
+            <div class="exp-badge-current">● ATUAL</div>
+            <div class="exp-card-main">
+              <div class="exp-role-title">ARQUITETA DE INTELIGÊNCIA ARTIFICIAL</div>
+              <div class="exp-company-name">🏰 OF HUNTER &nbsp;<span class="exp-period-inline">NOV 2025 — presente · remoto</span></div>
+            </div>
+            <button class="exp-toggle" aria-expanded="false" aria-label="Ver detalhes">▼</button>
+          </div>
+          <!-- Impact pills — always visible -->
+          <div class="exp-impact-pills">
+            <span class="exp-pill">🤖 Sistemas LLM em produção</span>
+            <span class="exp-pill">🔮 Pipelines RAG enterprise</span>
+            <span class="exp-pill">⚖️ Governança e segurança IA</span>
+            <span class="exp-pill">🏗️ Decisões arquiteturais</span>
+          </div>
+          <!-- Tech row — always visible -->
+          <div class="exp-tech-row">
+            <span class="exp-tech">LLMs</span><span class="exp-tech">RAG</span><span class="exp-tech">Agents</span>
+            <span class="exp-tech">Python</span><span class="exp-tech">Vetorização</span><span class="exp-tech">Governança IA</span>
+          </div>
+          <!-- Expandable details -->
+          <div class="exp-details" hidden>
+            <ul class="exp-detail-list">
+              <li>Desenho de arquiteturas de agentes inteligentes e soluções conversacionais alinhadas a processos de negócio</li>
+              <li>Implementação de pipelines de ingestão, vetorização e indexação para soluções RAG</li>
+              <li>Orquestração de serviços de IA com foco em escala, governança, segurança e custos</li>
+              <li>Integração com APIs e sistemas corporativos; suporte à liderança técnica em decisões arquiteturais</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Entry 2: Professora -->
+      <div class="exp-entry">
+        <div class="exp-timeline-dot active"></div>
+        <div class="exp-timeline-line"></div>
+        <div class="exp-card exp-card-expanded">
+          <div class="exp-card-top">
+            <div class="exp-badge-current">● ATUAL</div>
+            <div class="exp-card-main">
+              <div class="exp-role-title">PROFESSORA DE IA APLICADA</div>
+              <div class="exp-company-name">🎓 SoulCode Academy &nbsp;<span class="exp-period-inline">OUT 2025 — presente · remoto</span></div>
+            </div>
+            <button class="exp-toggle" aria-expanded="false" aria-label="Ver detalhes">▼</button>
+          </div>
+          <div class="exp-impact-pills">
+            <span class="exp-pill">🧠 LLMs &amp; SLMs na prática</span>
+            <span class="exp-pill">🔬 Labs RAG &amp; vetorização</span>
+            <span class="exp-pill">☁️ GCP para IA</span>
+            <span class="exp-pill">🎯 Mentoria técnica</span>
+          </div>
+          <div class="exp-tech-row">
+            <span class="exp-tech">LLMs / SLMs</span><span class="exp-tech">RAG</span>
+            <span class="exp-tech">GCP</span><span class="exp-tech">Python</span><span class="exp-tech">Mentoria</span>
+          </div>
+          <div class="exp-details" hidden>
+            <ul class="exp-detail-list">
+              <li>Planejamento e condução de atividades práticas em LLMs, RAG, vetorização e integração com dados</li>
+              <li>Desenvolvimento de pipelines em Python para ingestão, processamento e consumo de dados em IA</li>
+              <li>Orientação no uso de GCP para desenvolvimento e implantação de soluções de IA</li>
+              <li>Criação de materiais técnicos e hands-on labs alinhados a boas práticas de engenharia</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Entry 3: REVIO Programador -->
+      <div class="exp-entry">
+        <div class="exp-timeline-dot"></div>
+        <div class="exp-timeline-line"></div>
+        <div class="exp-card">
+          <div class="exp-card-top">
+            <div class="exp-card-main">
+              <div class="exp-role-title">PROGRAMADORA DE SISTEMAS DA INFORMAÇÃO</div>
+              <div class="exp-company-name">⚙️ REVIO Tecnologia Tributária &nbsp;<span class="exp-period-inline">MAR 2024 — NOV 2025 · 1a 9m</span></div>
+            </div>
+            <button class="exp-toggle" aria-expanded="false" aria-label="Ver detalhes">▼</button>
+          </div>
+          <div class="exp-impact-pills">
+            <span class="exp-pill">⚡ APIs RESTful + microsserviços</span>
+            <span class="exp-pill">🔄 Pipelines ETL/ELT otimizados</span>
+            <span class="exp-pill">🔐 LGPD · RBAC · Criptografia</span>
+            <span class="exp-pill">📊 MLOps + observabilidade</span>
+          </div>
+          <div class="exp-tech-row">
+            <span class="exp-tech">Python</span><span class="exp-tech">FastAPI</span><span class="exp-tech">NLP</span>
+            <span class="exp-tech">Docker</span><span class="exp-tech">Kubernetes</span><span class="exp-tech">SQL/NoSQL</span>
+            <span class="exp-tech">MLOps</span><span class="exp-tech">LGPD</span>
+          </div>
+          <div class="exp-details" hidden>
+            <ul class="exp-detail-list">
+              <li>APIs RESTful com autenticação, tratamento de exceções e integração entre microsserviços</li>
+              <li>Arquiteturas distribuídas com segurança, escalabilidade e resiliência; integração ETL/ELT com mensageria</li>
+              <li>Aplicação de NLP para extração contextual; segurança Big Data (criptografia, RBAC, LGPD)</li>
+              <li>Pipelines de IA/ML com versionamento de modelos, MLOps e observabilidade com métricas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Entry 4: REVIO Estagiária -->
+      <div class="exp-entry exp-entry-last">
+        <div class="exp-timeline-dot exp-timeline-dot-small"></div>
+        <div class="exp-card">
+          <div class="exp-card-top">
+            <div class="exp-card-main">
+              <div class="exp-role-title">ESTAGIÁRIA DE PROGRAMAÇÃO</div>
+              <div class="exp-company-name">⚗️ REVIO Tecnologia Tributária &nbsp;<span class="exp-period-inline">JUL 2023 — FEV 2024 · 8m</span></div>
+            </div>
+            <button class="exp-toggle" aria-expanded="false" aria-label="Ver detalhes">▼</button>
+          </div>
+          <div class="exp-impact-pills">
+            <span class="exp-pill">🕷️ Web scraping &amp; portais</span>
+            <span class="exp-pill">🐍 Automação Python</span>
+            <span class="exp-pill">📄 Processamento PDF/CSV</span>
+          </div>
+          <div class="exp-tech-row">
+            <span class="exp-tech">Python</span><span class="exp-tech">Automação</span>
+            <span class="exp-tech">Web Scraping</span><span class="exp-tech">PDF/CSV</span>
+          </div>
+          <div class="exp-details" hidden>
+            <ul class="exp-detail-list">
+              <li>Desenvolvimento de scripts para acesso, leitura de portais e extração de arquivos</li>
+              <li>Manutenção de programas de automação em Python e processamento de arquivos PDF, TXT, CSV e JSON</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /exp-timeline -->
+  </div>
+</section>
+
+<section class="section" id="formacao">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">// ACADEMIA 09</span>
+      <h2>FORMAÇÃO &amp; CERTIFICAÇÕES</h2>
+      <div class="divider"></div>
+    </div>
+
+    <!-- Arquivos da Academia Real — TECH -->
+    <div class="grimoire-category-header tech">
+      <span class="grimoire-category-icon">⚔️ Arquivos da Academia Real: Formações no caminho da Tecnologia</span>
+    </div>
+    <br>
+    <div class="grimoire-grid" style="margin-bottom:3rem">
+      <div class="grimoire-card gold-border">
+        <span class="grimoire-badge gold">★ SUPERIOR COMPLETO</span>
+        <span class="grimoire-icon">🔮</span>
+        <div class="grimoire-title">CIÊNCIA DE DADOS</div>
+        <div class="grimoire-institution">Universidade Presbiteriana Mackenzie</div>
+        <div class="grimoire-year">⚔ AGO 2023 — DEZ 2025</div>
+        <div class="grimoire-type-tag tech-tag">Ensino Superior Tecnológico</div>
+        <div class="grimoire-desc">Curso Superior com foco em análise de dados, machine learning e inteligência artificial aplicada.</div>
+      </div>
+      <div class="grimoire-card">
+        <span class="grimoire-badge">◈ TÉCNICO</span>
+        <span class="grimoire-icon">⚙️</span>
+        <div class="grimoire-title">DESENVOLVIMENTO DE SISTEMAS</div>
+        <div class="grimoire-institution">ETEC Zona Leste</div>
+        <div class="grimoire-year">⚔ JUL 2022 — JUL 2023</div>
+        <div class="grimoire-type-tag tech-tag">Ensino Técnico</div>
+        <div class="grimoire-desc">Base sólida em programação e engenharia de software.</div>
+      </div>
+    </div>
+
+    <!-- Conhecimentos de Outros Reinos -->
+    <div class="grimoire-category-header other">
+      <span class="grimoire-category-icon">🏛️ Conhecimentos de Outros Reinos: Formações anteriores que ampliam a visão estratégica do herói</span>
+    </div>
+    <br>
+    <div class="grimoire-grid" style="margin-bottom:3rem">
+      <div class="grimoire-card other-border">
+        <span class="grimoire-badge other-badge">◈ SUPERIOR COMPLETO</span>
+        <span class="grimoire-icon">🏛️</span>
+        <div class="grimoire-title">AUTOMAÇÃO DE ESCRITÓRIOS E SECRETARIADO</div>
+        <div class="grimoire-institution">FATEC São Paulo</div>
+        <div class="grimoire-year">⚔ JUL 2019 — DEZ 2022</div>
+        <div class="grimoire-type-tag other-tag">Ensino Superior Tecnológico</div>
+        <div class="grimoire-desc">Gestão de processos, comunicação corporativa e organização administrativa.</div>
+      </div>
+      <div class="grimoire-card other-border">
+        <span class="grimoire-badge other-badge">◈ TÉCNICO</span>
+        <span class="grimoire-icon">📊</span>
+        <div class="grimoire-title">CONTABILIDADE</div>
+        <div class="grimoire-institution">ETEC Albert Einstein</div>
+        <div class="grimoire-year">⚔ JUL 2019 — DEZ 2020</div>
+        <div class="grimoire-type-tag other-tag">Ensino Técnico</div>
+        <div class="grimoire-desc">Raciocínio financeiro, análise de dados contábeis e interpretação de indicadores.</div>
+      </div>
+      <div class="grimoire-card other-border">
+        <span class="grimoire-badge other-badge">◈ TÉCNICO</span>
+        <span class="grimoire-icon">📝</span>
+        <div class="grimoire-title">SECRETARIADO</div>
+        <div class="grimoire-institution">ETEC Professor Camargo Aranha</div>
+        <div class="grimoire-year">⚔ FEV 2018 — JUL 2019</div>
+        <div class="grimoire-type-tag other-tag">Ensino Técnico</div>
+        <div class="grimoire-desc">Comunicação profissional, gestão de documentos e organização corporativa.</div>
+      </div>
+      <div class="grimoire-card other-border">
+        <span class="grimoire-badge other-badge">◈ TÉCNICO</span>
+        <span class="grimoire-icon">🏺</span>
+        <div class="grimoire-title">MUSEOLOGIA</div>
+        <div class="grimoire-institution">ETEC Parque da Juventude</div>
+        <div class="grimoire-year">⚔ AGO 2016 — DEZ 2017</div>
+        <div class="grimoire-type-tag other-tag">Ensino Técnico</div>
+        <div class="grimoire-desc">Preservação, catalogação e curadoria de acervos — base para organização e gestão de conhecimento.</div>
+      </div>
+    </div>
+
+    <!-- Selos de Maestria Elemental -->
+    <div class="mastery-title" style="margin-bottom:1.5rem">☁️ Selos de Maestria Elemental</div>
+    <div class="cert-grid" style="margin-bottom:3rem">
+      <div class="cert-seal">
+        <span class="cert-seal-icon">🔵</span>
+        <span class="cert-seal-name">AZURE AI FUNDAMENTALS (AI-900)</span>
+        <span class="cert-seal-issuer">Microsoft Certified</span>
+      </div>
+      <div class="cert-seal">
+        <span class="cert-seal-icon">☁️</span>
+        <span class="cert-seal-name">AWS CLOUD FOUNDATIONS</span>
+        <span class="cert-seal-issuer">AWS Academy Graduate</span>
+      </div>
+      <div class="cert-seal">
+        <span class="cert-seal-icon">🔴</span>
+        <span class="cert-seal-name">RED HAT SYSTEM ADMIN I (RH124)</span>
+        <span class="cert-seal-issuer">Red Hat</span>
+      </div>
+      <div class="cert-seal">
+        <span class="cert-seal-icon">🔒</span>
+        <span class="cert-seal-name">INTRO TO CYBERSECURITY</span>
+        <span class="cert-seal-issuer">Cisco Networking Academy</span>
+      </div>
+    </div>
+
+    <!-- Tomos de Iluminação -->
+    <div class="mastery-title" style="margin-bottom:1.5rem">📚 Tomos de Iluminação</div>
+    <div class="tomos-list">
+      <div class="tomo-item">
+        <div class="tomo-dot gold"></div>
+        <div class="tomo-content">
+          <span class="tomo-name">Machine Learning: Classificação com SKLearn</span>
+          <span class="tomo-source">Alura</span>
+          <span class="tomo-hours">⚡ 8h · 2023</span>
+        </div>
+      </div>
+      <div class="tomo-item">
+        <div class="tomo-dot"></div>
+        <div class="tomo-content">
+          <span class="tomo-name">NLP: Regex e Modelos de Linguagem</span>
+          <span class="tomo-source">Alura</span>
+          <span class="tomo-hours">⚡ 12h · 2023</span>
+        </div>
+      </div>
+      <div class="tomo-item">
+        <div class="tomo-dot gold"></div>
+        <div class="tomo-content">
+          <span class="tomo-name">Pandas: Limpeza, Seleção e Agrupamento de Dados</span>
+          <span class="tomo-source">Alura</span>
+          <span class="tomo-hours">⚡ 24h · 2023</span>
+        </div>
+      </div>
+      <div class="tomo-item">
+        <div class="tomo-dot"></div>
+        <div class="tomo-content">
+          <span class="tomo-name">NumPy: Análise Numérica Eficiente com Python</span>
+          <span class="tomo-source">Alura</span>
+          <span class="tomo-hours">⚡ 8h · 2023</span>
+        </div>
+      </div>
+      <div class="tomo-item">
+        <div class="tomo-dot blood"></div>
+        <div class="tomo-content">
+          <span class="tomo-name">Python: OOP, Collections, TDD e Avançado</span>
+          <span class="tomo-source">Alura</span>
+          <span class="tomo-hours">⚡ 51h · 2023</span>
+        </div>
+      </div>
+      <div class="tomo-item">
+        <div class="tomo-dot blood"></div>
+        <div class="tomo-content">
+          <span class="tomo-name">MongoDB: Banco de Dados NoSQL</span>
+          <span class="tomo-source">Alura</span>
+          <span class="tomo-hours">⚡ 8h · 2023</span>
+        </div>
+      </div>
+      <div class="tomo-item">
+        <div class="tomo-dot"></div>
+        <div class="tomo-content">
+          <span class="tomo-name">Git e GitHub: Repositório, Commit e Versões</span>
+          <span class="tomo-source">Alura</span>
+          <span class="tomo-hours">⚡ 8h · 2023</span>
+        </div>
+      </div>
+      <div class="tomo-item">
+        <div class="tomo-dot gold"></div>
+        <div class="tomo-content">
+          <span class="tomo-name">Estrutura de Dados</span>
+          <span class="tomo-source">IFRS</span>
+          <span class="tomo-hours">⚡ 20h · 2024</span>
+        </div>
+      </div>
+      <div class="tomo-item">
+        <div class="tomo-dot"></div>
+        <div class="tomo-content">
+          <span class="tomo-name">Linux I: Conhecendo e Utilizando o Terminal</span>
+          <span class="tomo-source">Alura</span>
+          <span class="tomo-hours">⚡ 4h · 2023</span>
+        </div>
+      </div>
+      <div class="tomo-item">
+        <div class="tomo-dot blood"></div>
+        <div class="tomo-content">
+          <span class="tomo-name">Liderança, Capacidade de Aprender e Resiliência</span>
+          <span class="tomo-source">PUCRS</span>
+          <span class="tomo-hours">⚡ 4h · 2021</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<footer class="footer">
+  <div class="footer-logo">💎 DADOSDEAMORA.EXE 💎</div>
+  <p class="footer-sub">
+    Conjurado com ♥ e Python &middot; &copy; <span id="year"></span> &middot; Todos os feitiços reservados
+  </p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
