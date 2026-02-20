@@ -1,0 +1,53 @@
+/* ============================
+   BLOG MODAL
+   ============================ */
+.blog-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 1000;
+  display: flex; align-items: center; justify-content: center; padding: 1rem;
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.blog-overlay.active { opacity: 1; }
+.blog-modal {
+  background: var(--abyss); border: 3px solid var(--rune); max-width: 720px; width: 100%;
+  max-height: 88vh; display: flex; flex-direction: column;
+  transform: translateY(20px); transition: transform 0.3s ease;
+  box-shadow: 0 0 60px rgba(155,109,255,0.3);
+}
+.blog-overlay.active .blog-modal { transform: translateY(0); }
+.blog-modal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 1.5rem; border-bottom: 2px solid var(--tomb); background: var(--crypt);
+}
+.blog-modal-type { font-family: 'Press Start 2P', monospace; font-size: 0.56rem; }
+.blog-modal-close-x {
+  font-family: 'Press Start 2P', monospace; font-size: 0.54rem; color: var(--ash);
+  background: none; border: 1px solid var(--dust); padding: 0.3rem 0.6rem; cursor: pointer; transition: all 0.2s;
+}
+.blog-modal-close-x:hover { border-color: var(--blood-light); color: var(--blood-light); }
+.blog-modal-body { padding: 2rem; overflow-y: auto; flex: 1; }
+.blog-modal-body::-webkit-scrollbar { width: 6px; }
+.blog-modal-body::-webkit-scrollbar-track { background: var(--void); }
+.blog-modal-body::-webkit-scrollbar-thumb { background: var(--rune); }
+.blog-modal-icon { font-size: 3rem; display: block; margin-bottom: 1rem; }
+.blog-modal-title { font-family: 'Press Start 2P', monospace; font-size: clamp(0.6rem,2vw,0.85rem); color: var(--skull); line-height: 1.75; margin-bottom: 0.8rem; }
+.blog-modal-meta { font-family: 'Press Start 2P', monospace; font-size: 0.50rem; color: var(--dust); margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px dashed var(--tomb); }
+/* Conteúdo do modal: Pixelify Sans para leitura longa confortável */
+.blog-modal-content { font-family: 'Nunito', sans-serif; font-size: 1.05rem; color: var(--bone); line-height: 1.95; }
+.blog-modal-content h3 { font-family: 'Press Start 2P', monospace; font-size: 0.58rem; color: var(--rune); margin: 1.8rem 0 0.8rem; }
+.blog-modal-content p { margin-bottom: 1rem; }
+.blog-modal-content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+.blog-modal-content li { margin-bottom: 0.4rem; }
+.blog-modal-content li::marker { color: var(--blood-light); }
+.blog-modal-content strong { color: var(--skull); }
+.blog-modal-content code { background: var(--crypt); border: 1px solid var(--tomb); padding: 0.1rem 0.4rem; font-family: monospace; font-size: 0.95rem; color: var(--gold); }
+.blog-modal-footer {
+  padding: 1rem 1.5rem; border-top: 2px solid var(--tomb); background: var(--crypt);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.blog-modal-footer-rune { font-family: 'Press Start 2P', monospace; font-size: 0.50rem; color: var(--dust); }
+.blog-close-btn {
+  font-family: 'Press Start 2P', monospace; font-size: 0.54rem; color: var(--void);
+  background: var(--rune); border: none; padding: 0.6rem 1.2rem; cursor: pointer;
+  box-shadow: 0 3px 0 #5a3db0; transition: transform 0.1s, box-shadow 0.1s;
+}
+.blog-close-btn:hover { transform: translateY(2px); box-shadow: 0 1px 0 #5a3db0; }

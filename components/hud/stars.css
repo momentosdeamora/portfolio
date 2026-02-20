@@ -1,0 +1,17 @@
+/* ============================
+   STARS
+   ============================ */
+.stars-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+[data-theme="light"] .stars-bg { opacity: 0.25; }
+.star {
+  position: absolute; width: 2px; height: 2px;
+  background: var(--rune); image-rendering: pixelated;
+  animation: twinkle var(--dur, 3s) var(--delay, 0s) infinite;
+}
+@keyframes twinkle { 0%, 100% { opacity: 0.1; } 50% { opacity: 0.7; } }
+
+.gem-icon { display: inline-block; animation: gem-float 3s ease-in-out infinite; filter: drop-shadow(0 0 12px var(--rune)); }
+@keyframes gem-float {
+  0%,100% { transform: translateY(0) rotate(0deg); filter: drop-shadow(0 0 12px var(--rune)); }
+  50% { transform: translateY(-10px) rotate(5deg); filter: drop-shadow(0 0 24px var(--rune)) drop-shadow(0 0 40px var(--blood)); }
+}

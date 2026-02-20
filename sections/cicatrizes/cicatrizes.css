@@ -1,0 +1,76 @@
+/* ============================
+   CICATRIZES DE BATALHA
+   ============================ */
+.scar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.scar-card {
+  background: var(--crypt);
+  border: 2px solid var(--tomb);
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.scar-card:hover {
+  border-color: var(--blood-light);
+  box-shadow: 0 6px 24px rgba(192,57,110,0.15);
+}
+.scar-header {
+  background: rgba(139,34,82,0.15);
+  border-bottom: 2px solid var(--blood);
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.scar-num {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.50rem;
+  color: var(--blood-light);
+}
+.scar-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.52rem;
+  color: var(--skull);
+  line-height: 1.65;
+}
+.scar-rarity {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.42rem;
+  color: var(--dust);
+  letter-spacing: 0.05em;
+}
+.scar-body {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.scar-phase {
+  padding: 0.8rem 1rem;
+  border-left: 3px solid;
+}
+.scar-phase.wound {
+  border-color: var(--blood-light);
+  background: rgba(192,57,110,0.06);
+}
+.scar-phase.scar {
+  border-color: var(--rune);
+  background: rgba(155,109,255,0.06);
+}
+.scar-phase-label {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.46rem;
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--ash);
+}
+.scar-phase.wound .scar-phase-label { color: var(--blood-light); }
+.scar-phase.scar .scar-phase-label { color: var(--rune); }
+.scar-phase p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  color: var(--bone);
+  line-height: 1.8;
+}

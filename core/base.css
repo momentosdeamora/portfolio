@@ -1,0 +1,46 @@
+/* ============================
+   SECTIONS
+   ============================ */
+.section { padding: 5rem 1.5rem; position: relative; z-index: 1; transition: background 0.4s; }
+/* Semi-transparent: estrelas piscantes aparecem através do fundo */
+.section-dark { background: rgba(18, 15, 30, 0); }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
+.section-tag { font-family: 'Press Start 2P', monospace; font-size: 0.52rem; color: var(--blood-light); white-space: nowrap; }
+.section-header h2 { font-family: 'Press Start 2P', monospace; font-size: clamp(0.9rem, 2vw, 1.3rem); color: var(--skull); text-shadow: 2px 2px 0 var(--blood); }
+.section-header .divider { flex: 1; height: 2px; background: repeating-linear-gradient(90deg, var(--blood) 0, var(--blood) 6px, transparent 6px, transparent 12px); }
+
+
+/* ============================
+   DIALOG
+   ============================ */
+.dialog-box {
+  background: var(--abyss); border: 3px solid var(--rune); padding: 1rem 1.5rem;
+  position: relative; margin-bottom: 2.5rem; max-width: 600px; transition: background 0.4s;
+}
+.dialog-box::before {
+  content: '◆ SISTEMA'; position: absolute; top: -0.9rem; left: 1rem;
+  background: var(--abyss); padding: 0 0.5rem; font-family: 'Press Start 2P', monospace; font-size: 0.54rem; color: var(--rune);
+}
+.dialog-box::after {
+  content: '▼'; position: absolute; bottom: -1rem; right: 1.5rem;
+  color: var(--rune); font-family: 'Press Start 2P', monospace; font-size: 0.6rem; animation: blink 1s step-end infinite;
+}
+/* Texto do dialog: Pixelify Sans é muito mais confortável para leitura */
+.dialog-text { font-family: 'Nunito', sans-serif; font-size: 1.1rem; color: var(--skull); line-height: 1.9; }
+
+
+/* ============================
+   TOAST
+   ============================ */
+.levelup-toast { position: fixed; top: 90px; right: -340px; background: var(--crypt); border: 3px solid var(--gold); padding: 1rem 1.5rem; z-index: 300; transition: right 0.4s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 0 30px rgba(212,168,67,0.4); min-width: 280px; }
+.levelup-toast.show { right: 1rem; }
+.levelup-toast-title { font-family: 'Press Start 2P', monospace; font-size: 0.54rem; color: var(--gold); margin-bottom: 0.3rem; }
+.levelup-toast-msg { font-family: 'Nunito', sans-serif; font-size: 1.05rem; color: var(--bone); }
+
+
+/* ============================
+   ANIMATIONS
+   ============================ */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }

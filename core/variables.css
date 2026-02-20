@@ -1,0 +1,87 @@
+/* ============================
+   DARK THEME (default)
+   ============================ */
+:root,
+[data-theme="dark"] {
+  --void:        #0d0b14;
+  --abyss:       #120f1e;
+  --crypt:       #1a1628;
+  --tomb:        #231d36;
+  --shadow:      #2e2645;
+  --blood:       #8b2252;
+  --blood-light: #c0396e;
+  --rune:        #9b6dff;
+  --rune-dim:    rgba(155,109,255,0.15);
+  --bone:        #ddd6f5;
+  --ash:         #a99dc8;
+  --dust:        #6e5f99;
+  --skull:       #f2ecff;
+  --gold:        #e0b94e;
+  --gold-dim:    rgba(224,185,78,0.15);
+  --bg-body:     #0d0b14;
+  --bg-section:  #120f1e;
+  --border-main: #231d36;
+  --text-main:   #ddd6f5;
+  --text-muted:  #a99dc8;
+  --hud-bg:      #120f1e;
+  --hud-border:  #8b2252;
+}
+
+/* ============================
+   LIGHT THEME
+   ============================ */
+[data-theme="light"] {
+  --void:        #f0ecff;
+  --abyss:       #e8e2f8;
+  --crypt:       #ddd6f5;
+  --tomb:        #c8bfe8;
+  --shadow:      #b8aed8;
+  --blood:       #8b2252;
+  --blood-light: #c0396e;
+  --rune:        #6a3dcc;
+  --rune-dim:    rgba(106,61,204,0.12);
+  --bone:        #2a1a44;
+  --ash:         #4a3a6e;
+  --dust:        #7a6a9e;
+  --skull:       #1a0a34;
+  --gold:        #a06800;
+  --gold-dim:    rgba(160,104,0,0.12);
+  --bg-body:     #f0ecff;
+  --bg-section:  #e8e2f8;
+  --border-main: #c8bfe8;
+  --text-main:   #2a1a44;
+  --text-muted:  #4a3a6e;
+  --hud-bg:      #ddd6f5;
+  --hud-border:  #8b2252;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg-body);
+}
+
+body {
+  background: transparent;
+  color: var(--bone);
+  /* Nunito: rounded sans-serif, excelente para astigmatismo */
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  line-height: 1.75;
+  overflow-x: hidden;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ctext y='20' font-size='20'%3E💎%3C/text%3E%3C/svg%3E") 4 4, auto;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+a { text-decoration: none; color: inherit; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--void); }
+::-webkit-scrollbar-thumb { background: var(--blood); }
+
+/* CRT scanline — only in dark mode */
+[data-theme="dark"] body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 9999;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.07) 2px, rgba(0,0,0,0.07) 4px);
+}

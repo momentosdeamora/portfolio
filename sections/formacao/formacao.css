@@ -1,0 +1,31 @@
+/* ============================
+   FORMAÇÃO
+   ============================ */
+.grimoire-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+.grimoire-card { background: var(--crypt); border: 2px solid var(--tomb); padding: 1.5rem; position: relative; transition: all 0.2s; }
+.grimoire-card:hover { border-color: var(--rune); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(155,109,255,0.15); }
+.grimoire-card.gold-border { border-color: var(--gold); }
+.grimoire-card.gold-border:hover { box-shadow: 0 6px 24px rgba(224,185,78,0.15); }
+.grimoire-badge { position: absolute; top: -0.8rem; right: 1rem; font-family: 'Press Start 2P', monospace; font-size: 0.50rem; padding: 0.2rem 0.6rem; background: var(--crypt); border: 1px solid var(--rune); color: var(--rune); }
+.grimoire-badge.gold { border-color: var(--gold); color: var(--gold); }
+.grimoire-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
+.grimoire-title { font-family: 'Press Start 2P', monospace; font-size: 0.52rem; color: var(--skull); margin-bottom: 0.4rem; line-height: 1.65; }
+.grimoire-institution { font-family: 'Nunito', sans-serif; font-size: 1.1rem; color: var(--rune); margin-bottom: 0.3rem; }
+.grimoire-year { font-family: 'Press Start 2P', monospace; font-size: 0.50rem; color: var(--dust); margin-bottom: 0.8rem; }
+.grimoire-desc { font-family: 'Nunito', sans-serif; font-size: 1rem; color: var(--bone); line-height: 1.75; }
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; }
+.cert-seal { background: var(--crypt); border: 2px solid var(--tomb); padding: 1rem; text-align: center; transition: all 0.2s; cursor: default; }
+.cert-seal:hover { border-color: var(--gold); background: var(--gold-dim); }
+.cert-seal-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.cert-seal-name { font-family: 'Press Start 2P', monospace; font-size: 0.52rem; color: var(--skull); display: block; margin-bottom: 0.3rem; line-height: 1.65; }
+.cert-seal-issuer { font-family: 'Nunito', sans-serif; font-size: 1rem; color: var(--gold); display: block; }
+.tomos-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.8rem; }
+.tomo-item { background: var(--crypt); border: 1px solid var(--tomb); padding: 0.8rem 1rem; display: flex; gap: 0.8rem; align-items: flex-start; transition: all 0.2s; }
+.tomo-item:hover { border-color: var(--rune); }
+.tomo-dot { width: 8px; height: 8px; min-width: 8px; background: var(--rune); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); margin-top: 0.4rem; }
+.tomo-dot.gold { background: var(--gold); }
+.tomo-dot.blood { background: var(--blood-light); }
+.tomo-content { display: flex; flex-direction: column; gap: 2px; }
+.tomo-name { font-family: 'Press Start 2P', monospace; font-size: 0.95rem; color: var(--skull); line-height: 1.55; }
+.tomo-source { font-family: 'Nunito', sans-serif; font-size: 0.95rem; color: var(--ash); }
+.tomo-hours { font-family: 'Press Start 2P', monospace; font-size: 0.56rem; color: var(--dust); }

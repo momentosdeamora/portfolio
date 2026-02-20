@@ -1,0 +1,561 @@
+/* ============================
+   EXPERIÊNCIA
+   ============================ */
+.chronicle-timeline { position: relative; padding-left: 2.5rem; }
+.chronicle-timeline::before {
+  content: ''; position: absolute; left: 0.8rem; top: 0; bottom: 0; width: 2px;
+  background: repeating-linear-gradient(180deg, var(--blood) 0, var(--blood) 8px, transparent 8px, transparent 16px);
+}
+.chronicle-entry { position: relative; margin-bottom: 2.5rem; }
+.chronicle-entry::before {
+  content: '⚔'; position: absolute; left: -2.3rem; top: 0.4rem;
+  font-size: 1rem; color: var(--blood-light); background: var(--void); padding: 2px;
+}
+.chronicle-card { background: var(--crypt); border: 2px solid var(--tomb); padding: 1.5rem; transition: all 0.2s; }
+.chronicle-card:hover { border-color: var(--blood); }
+.chronicle-card.current { border-color: var(--gold); }
+.chronicle-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem; }
+.chronicle-role { font-family: 'Press Start 2P', monospace; font-size: 0.52rem; color: var(--skull); line-height: 1.65; }
+.chronicle-period { font-family: 'Press Start 2P', monospace; font-size: 0.52rem; color: var(--gold); white-space: nowrap; padding: 0.3rem 0.6rem; border: 1px solid var(--gold); }
+.chronicle-guild { font-family: 'Nunito', sans-serif; font-size: 1.15rem; color: var(--rune); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+.chronicle-results { display: flex; flex-direction: column; gap: 0.4rem; }
+.chronicle-result { font-family: 'Nunito', sans-serif; font-size: 1rem; color: var(--bone); padding-left: 1.2rem; position: relative; line-height: 1.7; }
+.chronicle-result::before { content: '▶'; position: absolute; left: 0; color: var(--blood-light); font-size: 0.8rem; }
+.chronicle-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+.chronicle-tag { font-family: 'Press Start 2P', monospace; font-size: 0.50rem; padding: 0.3rem 0.7rem; background: rgba(139,34,82,0.15); border: 1px solid var(--blood); color: var(--blood-light); }
+
+
+/* ============================
+   EXPERIENCE CARDS (new style)
+   ============================ */
+.exp-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.exp-card {
+  background: var(--crypt);
+  border: 2px solid var(--tomb);
+  border-left: 4px solid var(--dust);
+  padding: 1.4rem 1.5rem;
+  transition: all 0.2s;
+  position: relative;
+}
+.exp-card:hover {
+  border-color: var(--rune);
+  border-left-color: var(--rune);
+  transform: translateX(4px);
+}
+.exp-card.current {
+  border-left-color: var(--gold);
+}
+.exp-card.current:hover {
+  border-left-color: var(--gold);
+  border-color: var(--gold);
+}
+
+.exp-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.exp-card-left { display: flex; flex-direction: column; gap: 0.3rem; }
+.exp-card-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
+
+.exp-badge-current {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.50rem;
+  color: #4cff9a;
+  animation: exp-pulse 1.5s ease-in-out infinite;
+}
+@keyframes exp-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.exp-role {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.56rem;
+  color: var(--skull);
+  line-height: 1.65;
+}
+.exp-company {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  color: var(--rune);
+  font-weight: 700;
+}
+.exp-period {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.52rem;
+  color: var(--gold);
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--gold);
+}
+.exp-duration, .exp-mode {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  color: var(--dust);
+}
+
+/* Impact pills row */
+.exp-impact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+.exp-impact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--abyss);
+  border: 1px solid var(--tomb);
+  padding: 0.35rem 0.7rem;
+  border-radius: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+.exp-card:hover .exp-impact-item {
+  border-color: var(--dust);
+  background: var(--crypt);
+}
+.exp-impact-icon { font-size: 0.95rem; }
+.exp-impact-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  color: var(--ash);
+  font-weight: 600;
+}
+
+/* Tech chips */
+.exp-tech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.exp-tech {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.50rem;
+  padding: 0.18rem 0.45rem;
+  background: rgba(139,34,82,0.1);
+  border: 1px solid var(--blood);
+  color: var(--blood-light);
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 600px) {
+  .profile-what-grid { grid-template-columns: 1fr; }
+  .exp-card-header { flex-direction: column; }
+  .exp-card-right { align-items: flex-start; }
+  .profile-tabs { flex-direction: column; }
+  .profile-tab { text-align: left; }
+}
+
+
+/* ============================
+   SOBRE — PROFILE BLOCKS (no tabs)
+   ============================ */
+.char-left-col { flex-shrink: 0; }
+.char-left-col .char-card { max-width: 220px; }
+
+.profile-block {
+  background: var(--crypt);
+  border: 2px solid var(--tomb);
+  border-left: 4px solid var(--rune);
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.profile-block:nth-child(2) { border-left-color: var(--blood-light); }
+.profile-block:nth-child(3) { border-left-color: var(--gold); }
+
+.profile-block-header {
+  display: flex; align-items: center; gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+.profile-block-icon { font-size: 1.1rem; }
+.profile-block-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.60rem;
+  color: var(--skull);
+  letter-spacing: 0.05em;
+}
+
+.profile-block-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  color: var(--ash);
+  line-height: 1.75;
+  margin-bottom: 0.8rem;
+}
+
+.profile-stats-row {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+.profile-stat-pill {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.52rem;
+  padding: 0.3rem 0.7rem;
+  background: var(--rune-dim);
+  border: 1px solid var(--rune);
+  color: var(--rune);
+}
+
+.profile-do-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+.profile-do-item {
+  display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+  background: var(--abyss);
+  border: 1px solid var(--tomb);
+  padding: 0.7rem 0.5rem;
+  transition: all 0.2s;
+}
+.profile-do-item:hover {
+  border-color: var(--rune);
+  background: var(--rune-dim);
+}
+.profile-do-icon { font-size: 1.4rem; }
+.profile-do-label {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.50rem;
+  color: var(--ash);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.profile-done-now {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  color: #4dcc66;
+  animation: pulse-green 2s ease-in-out infinite;
+}
+@keyframes pulse-green { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+/* ============================
+   EXPERIÊNCIA — TIMELINE ACCORDION
+   ============================ */
+.exp-timeline {
+  position: relative;
+  padding-left: 2.5rem;
+}
+.exp-entry {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.exp-entry-last { margin-bottom: 0; }
+
+.exp-timeline-dot {
+  position: absolute;
+  left: -2.1rem;
+  top: 1.2rem;
+  width: 14px; height: 14px;
+  background: var(--dust);
+  border: 3px solid var(--void);
+  border-radius: 0; /* pixel style */
+  z-index: 2;
+}
+.exp-timeline-dot.active {
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+.exp-timeline-dot-small { width: 10px; height: 10px; left: -1.9rem; }
+@keyframes dot-pulse { 0%,100%{box-shadow:0 0 6px var(--gold)} 50%{box-shadow:0 0 16px var(--gold), 0 0 24px rgba(212,168,67,0.4)} }
+
+.exp-timeline-line {
+  position: absolute;
+  left: -1.55rem;
+  top: 2.2rem;
+  bottom: -1.5rem;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--tomb), transparent);
+  z-index: 1;
+}
+.exp-entry-last .exp-timeline-line { display: none; }
+
+.exp-card {
+  background: var(--crypt);
+  border: 2px solid var(--tomb);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+.exp-card.exp-card-expanded { border-color: var(--blood); }
+.exp-card:hover { border-color: var(--rune); }
+.exp-card-expanded:hover { border-color: var(--rune); }
+
+.exp-card-top {
+  display: flex; align-items: flex-start; gap: 0.8rem;
+  padding: 1rem 1.2rem 0.6rem;
+}
+.exp-badge-current {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.50rem;
+  color: #4dcc66;
+  background: rgba(77,204,102,0.1);
+  border: 1px solid rgba(77,204,102,0.3);
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  animation: dot-pulse-green 2s ease-in-out infinite;
+}
+@keyframes dot-pulse-green { 0%,100%{opacity:1} 50%{opacity:0.6} }
+
+.exp-card-main { flex: 1; }
+.exp-role-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.58rem;
+  color: var(--skull);
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+}
+.exp-company-name {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  color: var(--dust);
+  font-weight: 600;
+}
+.exp-period-inline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  color: var(--blood-light);
+  font-weight: 700;
+  background: rgba(192,57,110,0.1);
+  padding: 0.05rem 0.45rem;
+  border-left: 2px solid var(--blood-light);
+}
+
+.exp-toggle {
+  background: none;
+  border: 1px solid var(--blood-light);
+  color: var(--blood-light);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  margin-top: 0.2rem;
+  box-shadow: 0 2px 0 rgba(192,57,110,0.3);
+}
+.exp-toggle:hover { border-color: var(--skull); color: var(--skull); background: rgba(192,57,110,0.12); }
+.exp-toggle[aria-expanded="true"] { transform: rotate(180deg); border-color: var(--rune); color: var(--rune); box-shadow: 0 0 8px rgba(155,109,255,0.4); }
+
+.exp-impact-pills {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  padding: 0 1.2rem 0.6rem;
+}
+.exp-pill {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  padding: 0.2rem 0.7rem;
+  background: var(--abyss);
+  border: 1px solid var(--tomb);
+  color: var(--ash);
+  font-weight: 500;
+}
+
+.exp-tech-row {
+  display: flex; flex-wrap: wrap; gap: 0.3rem;
+  padding: 0 1.2rem 1rem;
+}
+.exp-tech {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.50rem;
+  padding: 0.3rem 0.7rem;
+  background: var(--rune-dim);
+  border: 1px solid var(--dust);
+  color: var(--rune);
+}
+
+.exp-details {
+  padding: 0.8rem 1.2rem 1rem;
+  border-top: 1px dashed var(--tomb);
+  background: var(--abyss);
+}
+.exp-details[hidden] { display: none; }
+.exp-detail-list {
+  list-style: none;
+  padding: 0;
+}
+.exp-detail-list li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  color: var(--ash);
+  line-height: 1.75;
+  padding: 0.3rem 0 0.3rem 1.2rem;
+  position: relative;
+}
+.exp-detail-list li::before {
+  content: '▶';
+  position: absolute; left: 0;
+  font-size: 0.55rem;
+  color: var(--rune);
+  top: 0.5rem;
+}
+/* ============================
+   EXPERIÊNCIA — TIMELINE ACCORDION
+   ============================ */
+.exp-timeline {
+  position: relative;
+  padding-left: 2.5rem;
+}
+.exp-entry {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.exp-entry-last { margin-bottom: 0; }
+
+.exp-timeline-dot {
+  position: absolute;
+  left: -2.1rem;
+  top: 1.2rem;
+  width: 14px; height: 14px;
+  background: var(--dust);
+  border: 3px solid var(--void);
+  border-radius: 0; /* pixel style */
+  z-index: 2;
+}
+.exp-timeline-dot.active {
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+.exp-timeline-dot-small { width: 10px; height: 10px; left: -1.9rem; }
+@keyframes dot-pulse { 0%,100%{box-shadow:0 0 6px var(--gold)} 50%{box-shadow:0 0 16px var(--gold), 0 0 24px rgba(212,168,67,0.4)} }
+
+.exp-timeline-line {
+  position: absolute;
+  left: -1.55rem;
+  top: 2.2rem;
+  bottom: -1.5rem;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--tomb), transparent);
+  z-index: 1;
+}
+.exp-entry-last .exp-timeline-line { display: none; }
+
+.exp-card {
+  background: var(--crypt);
+  border: 2px solid var(--tomb);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+.exp-card.exp-card-expanded { border-color: var(--blood); }
+.exp-card:hover { border-color: var(--rune); }
+.exp-card-expanded:hover { border-color: var(--rune); }
+
+.exp-card-top {
+  display: flex; align-items: flex-start; gap: 0.8rem;
+  padding: 1rem 1.2rem 0.6rem;
+}
+.exp-badge-current {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.50rem;
+  color: #4dcc66;
+  background: rgba(77,204,102,0.1);
+  border: 1px solid rgba(77,204,102,0.3);
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  animation: dot-pulse-green 2s ease-in-out infinite;
+}
+@keyframes dot-pulse-green { 0%,100%{opacity:1} 50%{opacity:0.6} }
+
+.exp-card-main { flex: 1; }
+.exp-role-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.58rem;
+  color: var(--skull);
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+}
+.exp-company-name {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  color: var(--dust);
+  font-weight: 600;
+}
+.exp-period-inline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  color: var(--blood-light);
+  font-weight: 700;
+  background: rgba(192,57,110,0.1);
+  padding: 0.05rem 0.45rem;
+  border-left: 2px solid var(--blood-light);
+}
+
+.exp-toggle {
+  background: none;
+  border: 1px solid var(--blood-light);
+  color: var(--blood-light);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  margin-top: 0.2rem;
+  box-shadow: 0 2px 0 rgba(192,57,110,0.3);
+}
+.exp-toggle:hover { border-color: var(--skull); color: var(--skull); background: rgba(192,57,110,0.12); }
+.exp-toggle[aria-expanded="true"] { transform: rotate(180deg); border-color: var(--rune); color: var(--rune); box-shadow: 0 0 8px rgba(155,109,255,0.4); }
+
+.exp-impact-pills {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  padding: 0 1.2rem 0.6rem;
+}
+.exp-pill {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  padding: 0.2rem 0.7rem;
+  background: var(--abyss);
+  border: 1px solid var(--tomb);
+  color: var(--ash);
+  font-weight: 500;
+}
+
+.exp-tech-row {
+  display: flex; flex-wrap: wrap; gap: 0.3rem;
+  padding: 0 1.2rem 1rem;
+}
+.exp-tech {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.50rem;
+  padding: 0.3rem 0.7rem;
+  background: var(--rune-dim);
+  border: 1px solid var(--dust);
+  color: var(--rune);
+}
+
+.exp-details {
+  padding: 0.8rem 1.2rem 1rem;
+  border-top: 1px dashed var(--tomb);
+  background: var(--abyss);
+}
+.exp-details[hidden] { display: none; }
+.exp-detail-list {
+  list-style: none;
+  padding: 0;
+}
+.exp-detail-list li {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  color: var(--ash);
+  line-height: 1.75;
+  padding: 0.3rem 0 0.3rem 1.2rem;
+  position: relative;
+}
+.exp-detail-list li::before {
+  content: '▶';
+  position: absolute; left: 0;
+  font-size: 0.55rem;
+  color: var(--rune);
+  top: 0.5rem;
+}

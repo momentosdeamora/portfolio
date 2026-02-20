@@ -1,0 +1,17 @@
+/* ============================
+   TAVERN / CONTACT
+   ============================ */
+.tavern { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.tavern-notice { background: var(--crypt); border: 3px solid var(--tomb); padding: 2rem; position: relative; }
+.tavern-notice::before { content: '📜 AVISO NA TAVERNA'; position: absolute; top: -0.9rem; left: 1rem; background: var(--crypt); padding: 0 0.6rem; font-family: 'Press Start 2P', monospace; font-size: 0.52rem; color: var(--gold); }
+.tavern-text { font-family: 'Nunito', sans-serif; font-size: 1.1rem; color: var(--bone); line-height: 2; margin-bottom: 1.5rem; }
+.tavern-text strong { color: var(--skull); }
+.contact-btn { display: inline-block; font-family: 'Press Start 2P', monospace; font-size: 0.5rem; color: var(--void); background: var(--blood-light); padding: 0.9rem 1.6rem; cursor: pointer; letter-spacing: 0.08em; box-shadow: 0 4px 0 #5a1030; transition: transform 0.1s, box-shadow 0.1s; }
+.contact-btn:hover { transform: translateY(2px); box-shadow: 0 2px 0 #5a1030; }
+.scroll-cards { display: flex; flex-direction: column; gap: 0.8rem; }
+.scroll-card { display: flex; align-items: center; gap: 1rem; background: var(--crypt); border: 2px solid var(--tomb); padding: 1rem 1.2rem; transition: all 0.2s; }
+.scroll-card:hover { border-color: var(--rune); transform: translateX(6px); }
+.scroll-card-icon { font-size: 1.7rem; flex-shrink: 0; }
+.scroll-card-info { display: flex; flex-direction: column; gap: 2px; }
+.scroll-card-title { font-family: 'Press Start 2P', monospace; font-size: 0.56rem; color: var(--skull); }
+.scroll-card-sub { font-family: 'Nunito', sans-serif; font-size: 1.05rem; color: var(--bone); }

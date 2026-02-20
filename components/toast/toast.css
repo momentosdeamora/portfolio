@@ -1,0 +1,7 @@
+/* ============================
+   TOAST
+   ============================ */
+.levelup-toast { position: fixed; top: 90px; right: -340px; background: var(--crypt); border: 3px solid var(--gold); padding: 1rem 1.5rem; z-index: 300; transition: right 0.4s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 0 30px rgba(212,168,67,0.4); min-width: 280px; }
+.levelup-toast.show { right: 1rem; }
+.levelup-toast-title { font-family: 'Press Start 2P', monospace; font-size: 0.54rem; color: var(--gold); margin-bottom: 0.3rem; }
+.levelup-toast-msg { font-family: 'Nunito', sans-serif; font-size: 1.05rem; color: var(--bone); }

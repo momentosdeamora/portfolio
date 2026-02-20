@@ -1,0 +1,16 @@
+/* ============================
+   STATUS ATUAL
+   ============================ */
+.status-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+.status-card { background: var(--crypt); border: 2px solid var(--tomb); padding: 1.5rem; position: relative; transition: all 0.2s; }
+.status-card:hover { border-color: var(--rune); }
+.status-card.active-quest { border-color: var(--gold); }
+.status-card.active-quest::before { content: '◆ ATIVO'; position: absolute; top: -0.8rem; right: 1rem; font-family: 'Press Start 2P', monospace; font-size: 0.50rem; color: var(--gold); background: var(--crypt); padding: 0 0.5rem; animation: blink 1.5s step-end infinite; }
+.status-icon { font-size: 2.5rem; display: block; margin-bottom: 0.8rem; }
+.status-label { font-family: 'Press Start 2P', monospace; font-size: 0.52rem; color: var(--blood-light); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.1em; }
+.status-title { font-family: 'Press Start 2P', monospace; font-size: 0.52rem; color: var(--skull); margin-bottom: 0.8rem; line-height: 1.65; }
+.status-desc { font-family: 'Nunito', sans-serif; font-size: 1rem; color: var(--bone); line-height: 1.75; }
+.status-progress { margin-top: 1rem; }
+.status-progress-label { font-family: 'Press Start 2P', monospace; font-size: 0.50rem; color: var(--dust); margin-bottom: 0.4rem; display: flex; justify-content: space-between; }
+.status-progress-bar { height: 8px; background: var(--tomb); border: 1px solid var(--dust); overflow: hidden; }
+.status-progress-fill { height: 100%; background: linear-gradient(90deg, #a06800, var(--gold)); transition: width 1.5s ease; }

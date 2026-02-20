@@ -1,0 +1,95 @@
+/* ============================
+   PUBLICAÇÃO EM DESTAQUE
+   ============================ */
+.pub-spotlight {
+  background: var(--crypt);
+  border: 2px solid var(--gold);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.pub-spotlight::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--rune), var(--blood-light));
+}
+.pub-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.pub-badge {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.46rem;
+  padding: 0.25rem 0.7rem;
+}
+.pub-badge.conference { background: var(--gold-dim); border: 1px solid var(--gold); color: var(--gold); }
+.pub-badge.indexed { background: var(--rune-dim); border: 1px solid var(--rune); color: var(--rune); }
+.pub-badge.year { background: rgba(93,222,138,0.1); border: 1px solid #5dde8a; color: #5dde8a; }
+
+.pub-main {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.pub-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 12px var(--gold));
+}
+.pub-content { flex: 1; }
+.pub-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(0.52rem, 1.2vw, 0.7rem);
+  color: var(--skull);
+  line-height: 1.75;
+  margin-bottom: 0.6rem;
+}
+.pub-venue {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.pub-abstract {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  color: var(--bone);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+.pub-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+.pub-tag {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.46rem;
+  padding: 0.25rem 0.6rem;
+  background: var(--gold-dim);
+  border: 1px solid var(--dust);
+  color: var(--ash);
+}
+.pub-link {
+  display: inline-block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.52rem;
+  color: var(--void);
+  background: var(--gold);
+  padding: 0.7rem 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #6a4200;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.pub-link:hover { transform: translateY(2px); box-shadow: 0 2px 0 #6a4200; }
+
+@media (max-width: 600px) {
+  .pub-main { flex-direction: column; }
+  .scar-grid { grid-template-columns: 1fr; }
+}

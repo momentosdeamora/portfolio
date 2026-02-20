@@ -1,0 +1,93 @@
+/* ============================
+   SKILL TREE
+   ============================ */
+.skill-tree { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+.skill-branch { background: var(--crypt); border: 2px solid var(--tomb); padding: 1.5rem; transition: border-color 0.2s, background 0.4s; }
+.skill-branch:hover { border-color: var(--blood); }
+.skill-branch-title { font-family: 'Press Start 2P', monospace; font-size: 0.5rem; color: var(--blood-light); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+.skill-item { display: flex; align-items: center; gap: 0.7rem; padding: 0.4rem 0; border-bottom: 1px dashed var(--tomb); transition: all 0.2s; }
+.skill-item:last-child { border-bottom: none; }
+.skill-item:hover { padding-left: 0.5rem; }
+.skill-gem { width: 12px; height: 12px; background: var(--rune); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); flex-shrink: 0; }
+.skill-gem.blood { background: var(--blood-light); }
+.skill-gem.gold { background: var(--gold); }
+.skill-gem.ash { background: var(--ash); }
+/* skill-name: Pixelify Sans mais legível que Press Start 2P em tamanhos pequenos */
+.skill-name { font-family: 'Nunito', sans-serif; font-size: 1rem; color: var(--bone); }
+.skill-lvl { margin-left: auto; font-family: 'Press Start 2P', monospace; font-size: 0.52rem; color: var(--dust); }
+.mastery-section { margin-top: 1rem; }
+.mastery-title { font-family: 'Press Start 2P', monospace; font-size: 0.5rem; color: var(--ash); margin-bottom: 1.2rem; text-transform: uppercase; letter-spacing: 0.1em; }
+.mastery-item { margin-bottom: 1rem; }
+.mastery-label { display: flex; justify-content: space-between; font-family: 'Press Start 2P', monospace; font-size: 0.54rem; color: var(--bone); margin-bottom: 0.4rem; }
+.mastery-bar-track { height: 10px; background: var(--tomb); border: 2px solid var(--dust); overflow: hidden; }
+.mastery-bar-fill { height: 100%; width: 0; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); position: relative; }
+.mastery-bar-fill::after { content: '░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░'; position: absolute; inset: 0; font-size: 10px; line-height: 10px; color: rgba(255,255,255,0.15); overflow: hidden; }
+.mastery-bar-fill.rune { background: linear-gradient(90deg, #5a2db0, var(--rune)); }
+.mastery-bar-fill.blood { background: linear-gradient(90deg, #5a1030, var(--blood-light)); }
+.mastery-bar-fill.gold { background: linear-gradient(90deg, #8a6010, var(--gold)); }
+
+
+/* ============================
+   DIFERENCIAIS & ARSENAL
+   ============================ */
+.arsenal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+.arsenal-branch { background: var(--crypt); border: 2px solid var(--tomb); padding: 1.5rem; transition: all 0.2s; }
+.arsenal-branch:hover { border-color: var(--gold); }
+.arsenal-branch-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem; }
+.arsenal-branch-icon { font-size: 1.8rem; }
+.arsenal-branch-title { font-family: 'Press Start 2P', monospace; font-size: 0.56rem; color: var(--gold); line-height: 1.65; }
+.arsenal-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 0; border-bottom: 1px dashed var(--tomb); }
+.arsenal-item:last-child { border-bottom: none; }
+.arsenal-item-icon { font-size: 1.2rem; flex-shrink: 0; }
+/* arsenal-item-name: Pixelify Sans — muito mais legível em listas longas */
+.arsenal-item-name { font-family: 'Nunito', sans-serif; font-size: 1rem; color: var(--bone); flex: 1; }
+.arsenal-item-tier { font-family: 'Press Start 2P', monospace; font-size: 0.50rem; padding: 0.25rem 0.55rem; }
+.tier-lendario { background: rgba(224,185,78,0.15); border: 1px solid var(--gold); color: var(--gold); }
+.tier-epico { background: rgba(155,109,255,0.15); border: 1px solid var(--rune); color: var(--rune); }
+.tier-raro { background: rgba(192,57,110,0.15); border: 1px solid var(--blood-light); color: var(--blood-light); }
+.tier-comum { background: rgba(169,157,200,0.1); border: 1px solid var(--ash); color: var(--ash); }
+.blessings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+.blessing-card {
+  background: var(--crypt); border: 2px solid var(--tomb);
+  padding: 0; display: flex; flex-direction: column;
+  transition: all 0.25s; cursor: default; position: relative; overflow: hidden;
+}
+.blessing-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--rune), var(--blood-light));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease;
+}
+.blessing-card:hover::before { transform: scaleX(1); }
+.blessing-card:hover { border-color: var(--rune); background: var(--rune-dim); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(155,109,255,0.15); }
+.blessing-card-header { display: flex; align-items: center; gap: 0.8rem; padding: 1rem 1.2rem 0.5rem; }
+.blessing-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--rune), var(--blood-light));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease;
+}
+.blessing-card:hover::before { transform: scaleX(1); }
+.blessing-card:hover { border-color: var(--rune); background: var(--rune-dim); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(155,109,255,0.15); }
+.blessing-tag {
+  font-family: 'Press Start 2P', monospace; font-size: 0.40rem;
+  color: var(--rune); padding: 0.15rem 0.5rem;
+  border: 1px solid var(--rune); background: var(--rune-dim);
+  display: inline-block; width: fit-content;
+}
+.blessing-card .blessing-desc { font-family: 'Nunito', sans-serif; font-size: 0.98rem; color: var(--ash); line-height: 1.7; padding: 0 1.2rem 0.8rem; }
+.blessing-meter {
+  height: 4px;
+  background: var(--tomb);
+  margin: 0 1.2rem 1rem;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
+.blessing-meter-fill {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #9b6dff, #c0396e);
+  width: 0;
+  transition: width 1.4s cubic-bezier(0.4,0,0.2,1);
+}

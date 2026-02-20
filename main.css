@@ -1,0 +1,29 @@
+/* ============================================================
+   MAIN.CSS — Importa todos os módulos em ordem
+   ============================================================ */
+
+/* ── CORE ────────────────────────────────── */
+@import "core/variables.css";
+@import "core/base.css";
+@import "core/daymode.css";
+@import "core/responsive.css";
+
+/* ── COMPONENTS ──────────────────────────── */
+@import "components/hud/stars.css";
+@import "components/hud/hud.css";
+@import "components/footer/footer.css";
+@import "components/toast/toast.css";
+
+/* ── SECTIONS ────────────────────────────── */
+@import "sections/hero/hero.css";
+@import "sections/personagem/personagem.css";
+@import "sections/arsenal/arsenal.css";
+@import "sections/missoes/missoes.css";
+@import "sections/contratos/contratos.css";
+@import "sections/taverna/taverna.css";
+@import "sections/grimorio/grimorio.css";
+@import "sections/status/status.css";
+@import "sections/experiencia/experiencia.css";
+@import "sections/formacao/formacao.css";
+@import "sections/cicatrizes/cicatrizes.css";
+@import "sections/publicacao/publicacao.css";

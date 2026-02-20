@@ -1,0 +1,30 @@
+/* ============================
+   CONTEÚDO TÉCNICO
+   ============================ */
+.manuscripts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.manuscript-card { background: var(--crypt); border: 2px solid var(--tomb); transition: all 0.2s; overflow: hidden; }
+.manuscript-card:hover { border-color: var(--rune); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(155,109,255,0.15); }
+.manuscript-card.talk { border-color: var(--blood); }
+.manuscript-card.talk:hover { box-shadow: 0 8px 24px rgba(139,34,82,0.2); }
+.manuscript-card.research { border-color: #3a8a5a; }
+.manuscript-card.research:hover { border-color: #5dde8a; box-shadow: 0 8px 24px rgba(93,222,138,0.15); }
+.manuscript-header { padding: 1rem 1.5rem 0; display: flex; justify-content: space-between; align-items: center; }
+.manuscript-type { font-family: 'Press Start 2P', monospace; font-size: 0.52rem; padding: 0.2rem 0.6rem; }
+.manuscript-type.article { background: rgba(155,109,255,0.15); border: 1px solid var(--rune); color: var(--rune); }
+.manuscript-type.talk { background: rgba(139,34,82,0.15); border: 1px solid var(--blood-light); color: var(--blood-light); }
+.manuscript-type.tutorial { background: rgba(224,185,78,0.15); border: 1px solid var(--gold); color: var(--gold); }
+.manuscript-type.research { background: rgba(93,222,138,0.1); border: 1px solid #5dde8a; color: #5dde8a; }
+.manuscript-body { padding: 1rem 1.5rem 1.5rem; }
+.manuscript-icon { font-size: 2rem; margin-bottom: 0.6rem; display: block; }
+.manuscript-title { font-family: 'Press Start 2P', monospace; font-size: 0.5rem; color: var(--skull); margin-bottom: 0.6rem; line-height: 1.7; }
+.manuscript-desc { font-family: 'Nunito', sans-serif; font-size: 1rem; color: var(--bone); line-height: 1.75; margin-bottom: 1rem; }
+.manuscript-meta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.manuscript-meta-item { font-family: 'Press Start 2P', monospace; font-size: 0.50rem; color: var(--dust); }
+.manuscript-link {
+  display: inline-block; margin-top: 0.8rem; font-family: 'Press Start 2P', monospace; font-size: 0.52rem;
+  padding: 0.5rem 1rem; border: 1px solid var(--dust); color: var(--ash); transition: all 0.15s; cursor: pointer;
+  background: none;
+}
+.manuscript-link:hover { border-color: var(--rune); color: var(--rune); background: var(--rune-dim); }
+.manuscript-card.talk .manuscript-link:hover { border-color: var(--blood-light); color: var(--blood-light); background: rgba(139,34,82,0.1); }
+.manuscript-card.research .manuscript-link:hover { border-color: #5dde8a; color: #5dde8a; background: rgba(93,222,138,0.1); }

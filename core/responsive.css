@@ -1,0 +1,38 @@
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 1100px) {
+  .xp-container, .hp-container { min-width: 110px; max-width: 130px; }
+  .hud-nav li a { font-size: 0.52rem; padding: 0.5rem 0.5rem; }
+  .hud-name { font-size: 0.54rem; }
+  .hud-class { font-size: 0.82rem; }
+}
+
+@media (max-width: 860px) {
+  .hud { flex-wrap: wrap; gap: 0.5rem; padding: 0.6rem 1rem; }
+  .hud-nav { display: none; }
+  .hud-nav.open {
+    display: flex; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; background: var(--abyss); border-bottom: 3px solid var(--blood); padding: 0.5rem 0; z-index: 100;
+  }
+  .hud-nav.open li a { border-left: none; border-top: 1px solid var(--tomb); font-size: 0.52rem; padding: 0.8rem 1.2rem; }
+  .hamburger { display: flex; }
+  .char-sheet { grid-template-columns: 1fr; }
+  .tavern { grid-template-columns: 1fr; }
+  .hero-title { font-size: 1.3rem; }
+  .chronicle-header { flex-direction: column; }
+  .xp-container, .hp-container { min-width: 120px; }
+}
+
+@media (max-width: 560px) {
+  .quest-log { grid-template-columns: 1fr; }
+  .skill-tree { grid-template-columns: 1fr; }
+  .stats-boxes { flex-direction: column; }
+  .section { padding: 3rem 1rem; }
+  .grimoire-grid { grid-template-columns: 1fr; }
+  .status-panel { grid-template-columns: 1fr; }
+  .arsenal-grid { grid-template-columns: 1fr; }
+  .manuscripts-grid { grid-template-columns: 1fr; }
+  .blog-modal { max-height: 95vh; }
+  .blog-modal-body { padding: 1.2rem; }
+}

@@ -1,0 +1,81 @@
+/* ============================
+   HUD — compacto para não ultrapassar a tela
+   ============================ */
+.hud {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: var(--hud-bg); border-bottom: 3px solid var(--hud-border);
+  padding: 0.45rem 1rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 0.6rem; flex-wrap: nowrap;
+  box-shadow: 0 4px 0 var(--void), 0 6px 20px rgba(139,34,82,0.3);
+  transition: background 0.4s ease;
+  overflow: hidden;
+}
+.hud-left { display: flex; align-items: center; gap: 0.8rem; flex-shrink: 0; }
+.hud-avatar {
+  width: 36px; height: 36px; background: var(--crypt); border: 2px solid var(--blood);
+  display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+  image-rendering: pixelated; position: relative; flex-shrink: 0;
+}
+.hud-avatar::after {
+  content: ''; position: absolute; bottom: -4px; right: -4px;
+  width: 7px; height: 7px; background: var(--gold); border: 2px solid var(--void);
+}
+.hud-player { display: flex; flex-direction: column; gap: 2px; }
+.hud-name { font-family: 'Press Start 2P', monospace; font-size: 0.55rem; color: var(--skull); letter-spacing: 0.03em; }
+.hud-class { font-family: 'Nunito', sans-serif; font-weight: 600; font-size: 0.9rem; color: var(--rune); letter-spacing: 0.02em; }
+
+/* Barras XP e HP */
+.xp-container { display: flex; flex-direction: column; gap: 3px; min-width: 130px; max-width: 160px; }
+.xp-label { font-family: 'Press Start 2P', monospace; font-size: 0.50rem; color: var(--gold); display: flex; justify-content: space-between; gap: 4px; }
+.xp-track {
+  height: 14px; background: var(--tomb); border: 2px solid var(--dust);
+  position: relative; overflow: hidden; cursor: pointer; transition: border-color 0.2s;
+}
+.xp-track:hover { border-color: var(--gold); }
+.xp-fill {
+  height: 100%; background: linear-gradient(90deg, #a06800, var(--gold), #f0c060);
+  width: 0; transition: width 1.5s cubic-bezier(0.4,0,0.2,1); position: relative;
+}
+.xp-fill::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 4px; background: #fff; opacity: 0.8; animation: xp-shine 1s infinite; }
+.xp-track::after {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(90deg, transparent 0, transparent 8px, rgba(0,0,0,0.1) 8px, rgba(0,0,0,0.1) 10px);
+  pointer-events: none;
+}
+.xp-burst { position: absolute; top: -28px; left: 50%; transform: translateX(-50%); font-family: 'Press Start 2P', monospace; font-size: 0.4rem; color: var(--gold); pointer-events: none; animation: burst-up 1s ease forwards; }
+@keyframes burst-up { 0%{opacity:1;transform:translateX(-50%) translateY(0)} 100%{opacity:0;transform:translateX(-50%) translateY(-20px)} }
+@keyframes xp-shine { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+.hp-container { display: flex; flex-direction: column; gap: 3px; min-width: 120px; max-width: 150px; }
+.hp-label { font-family: 'Press Start 2P', monospace; font-size: 0.50rem; color: var(--blood-light); display: flex; justify-content: space-between; gap: 4px; }
+.hp-track { height: 14px; background: var(--tomb); border: 2px solid var(--dust); overflow: hidden; cursor: pointer; position: relative; transition: border-color 0.2s; }
+.hp-track:hover { border-color: var(--blood-light); }
+.hp-fill { height: 100%; width: 87%; background: linear-gradient(90deg, #5a0020, var(--blood), var(--blood-light)); transition: width 0.6s ease; position: relative; }
+.hp-fill::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 4px; background: rgba(255,160,180,0.8); animation: xp-shine 1.4s infinite; }
+.hp-track::after {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(90deg, transparent 0, transparent 8px, rgba(0,0,0,0.1) 8px, rgba(0,0,0,0.1) 10px);
+  pointer-events: none;
+}
+
+/* Nav */
+.hud-nav { display: flex; gap: 0; list-style: none; }
+.hud-nav li a {
+  display: block; font-family: 'Press Start 2P', monospace; font-size: 0.52rem; padding: 0.55rem 0.6rem;
+  color: var(--bone); letter-spacing: 0; border-left: 2px solid var(--tomb); transition: all 0.1s; position: relative;
+}
+.hud-nav li a:hover, .hud-nav li a.active { color: var(--gold); background: var(--gold-dim); }
+.hud-nav li a::before { content: '▶'; position: absolute; left: 0.2rem; opacity: 0; color: var(--gold); font-size: 0.45rem; transition: opacity 0.1s; }
+.hud-nav li a:hover::before { opacity: 1; }
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  font-family: 'Press Start 2P', monospace; font-size: 0.50rem; padding: 0.4rem 0.7rem;
+  background: var(--crypt); border: 2px solid var(--dust); color: var(--gold);
+  cursor: pointer; transition: all 0.2s; white-space: nowrap; flex-shrink: 0;
+}
+.theme-toggle-btn:hover { border-color: var(--gold); background: var(--gold-dim); }
+
+.hamburger { display: none; flex-direction: column; gap: 4px; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; width: 22px; height: 3px; background: var(--rune); }

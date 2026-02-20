@@ -1,0 +1,28 @@
+/* ============================
+   QUEST LOG
+   ============================ */
+.quest-log { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.quest-card { background: var(--crypt); border: 2px solid var(--tomb); position: relative; overflow: hidden; transition: all 0.2s; }
+.quest-card:hover { border-color: var(--blood); transform: translateY(-3px); box-shadow: 0 8px 0 rgba(139,34,82,0.3), 0 12px 30px rgba(0,0,0,0.3); }
+.quest-card.legendary { border-color: var(--gold); }
+.quest-card.legendary:hover { box-shadow: 0 8px 0 rgba(212,168,67,0.3); }
+.quest-banner { background: var(--tomb); padding: 0.5rem 1rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--void); }
+.quest-rarity { font-family: 'Press Start 2P', monospace; font-size: 0.54rem; }
+.rarity-common { color: var(--ash); }
+.rarity-rare { color: var(--rune); }
+.rarity-legendary { color: var(--gold); }
+.quest-status { font-family: 'Press Start 2P', monospace; font-size: 0.52rem; padding: 0.2rem 0.5rem; border: 1px solid; }
+.status-complete { color: #5dde8a; border-color: #5dde8a; }
+.status-active { color: var(--gold); border-color: var(--gold); animation: blink-border 1.5s step-end infinite; }
+@keyframes blink-border { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.quest-body { padding: 1.5rem; }
+.quest-icon { font-size: 2.2rem; margin-bottom: 0.8rem; display: block; }
+.quest-title { font-family: 'Press Start 2P', monospace; font-size: 0.56rem; color: var(--skull); margin-bottom: 0.8rem; line-height: 1.7; }
+.quest-desc { font-family: 'Nunito', sans-serif; font-size: 1.05rem; color: var(--bone); line-height: 1.85; margin-bottom: 1.2rem; }
+.quest-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.quest-tag { font-family: 'Press Start 2P', monospace; font-size: 0.52rem; padding: 0.25rem 0.6rem; background: rgba(155,109,255,0.1); border: 1px solid var(--dust); color: var(--ash); }
+.quest-footer { display: flex; justify-content: space-between; align-items: center; padding: 0.7rem 1rem; background: var(--void); border-top: 1px dashed var(--tomb); }
+.quest-reward { font-family: 'Press Start 2P', monospace; font-size: 0.52rem; color: var(--gold); }
+.quest-links { display: flex; gap: 0.5rem; }
+.quest-link { font-family: 'Press Start 2P', monospace; font-size: 0.52rem; padding: 0.35rem 0.7rem; border: 1px solid var(--dust); color: var(--ash); transition: all 0.15s; display: flex; align-items: center; gap: 0.3rem; cursor: pointer; background: none; }
+.quest-link:hover { border-color: var(--rune); color: var(--rune); background: var(--rune-dim); }

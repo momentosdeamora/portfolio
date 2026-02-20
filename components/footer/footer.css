@@ -1,0 +1,7 @@
+/* ============================
+   FOOTER
+   ============================ */
+.footer { background: var(--void); border-top: 3px solid var(--blood); padding: 2rem; text-align: center; position: relative; z-index: 1; }
+.footer-logo { font-family: 'Press Start 2P', monospace; font-size: 0.62rem; color: var(--blood-light); margin-bottom: 0.5rem; }
+.footer-sub { color: var(--dust); font-family: 'Nunito', sans-serif; font-size: 0.9rem; }
+.footer-sub span { color: var(--rune); }
